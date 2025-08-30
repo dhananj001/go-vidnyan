@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गो विज्ञान संशोधन संस्था | Go Vidnyan Sanshodhan Sanstha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Advanced UI/UX styles for an immersive experience */
+        :root {
+            --color-background: #fdfdfc;
+            --color-text: #1f2937;
+            --color-primary-green: #14532d;
+            --color-accent-gold: #b45309;
+            --color-light-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .marathi-heading {
+            font-family: 'Tiro Devanagari Marathi', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/homebg.png');
+            background-size: cover;
+            background-position: center 45%;
+            background-attachment: fixed;
+            /* Parallax effect */
+        }
+
+        .primary-green {
+            color: var(--color-primary-green);
+        }
+
+        .primary-green-bg {
+            background-color: var(--color-primary-green);
+        }
+
+        .accent-gold {
+            color: var(--color-accent-gold);
+        }
+
+        .accent-gold-bg {
+            background-color: var(--color-accent-gold);
+        }
+
+        /* Animations & Transitions */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title-underline {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--color-accent-gold);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-xl shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-4">
+                <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo"
+                    class="h-16 w-16 rounded-full object-cover border-2 border-green-200 shadow-sm">
+                <div>
+                    <h1 class="text-xl font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
+                    <p class="text-xs text-gray-500 -mt-1">पुणे | Est. 2002</p>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-gray-600 font-semibold">
+                <a href="#about" class="hover:primary-green transition duration-300">About Us</a>
+                <a href="#projects" class="hover:primary-green transition duration-300">Our Work</a>
+                <a href="#awards" class="hover:primary-green transition duration-300">Awards</a>
+                <a href="#contact" class="hover:primary-green transition duration-300">Contact</a>
+            </div>
+            <a href="#contact"
+                class="hidden md:block accent-gold-bg text-white font-bold py-3 px-8 rounded-full hover:bg-amber-800 transition duration-300 shadow-md transform hover:scale-105">Join
+                Us</a>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 border-t">
+            <a href="#about" class="block py-2 text-gray-700 hover:primary-green">About Us</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:primary-green">Our Work</a>
+            <a href="#awards" class="block py-2 text-gray-700 hover:primary-green">Awards</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:primary-green">Contact</a>
+            <a href="#contact"
+                class="block w-full text-center mt-2 accent-gold-bg text-white font-bold py-2 px-5 rounded-full">Join
+                Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl md:text-8xl font-bold marathi-heading mb-6 leading-tight drop-shadow-2xl">गोसेवा,
+                    राष्ट्ररक्षा</h2>
+                <p class="text-xl md:text-2xl max-w-4xl mx-auto text-gray-200 drop-shadow-lg">वैज्ञानिक दृष्टीकोनातून
+                    पंचगव्य-आधारित जीवनशैली पुनर्स्थापित करून भारतीय गायींचे जतन, संवर्धन आणि संरक्षण करणे.</p>
+                <div class="mt-16">
+                    <a href="#about"
+                        class="bg-white primary-green font-bold py-4 px-12 rounded-full text-lg hover:bg-gray-200 transition duration-300 shadow-2xl transform hover:scale-105">आमचे
+                        कार्य पहा</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-28">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <span class="accent-gold font-semibold">आमच्याबद्दल</span>
+                        <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mt-2 mb-6">परंपरेशी
+                            जोडलेले, विज्ञानाने प्रेरित</h2>
+                        <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+                            <p>गो-विज्ञान संशोधन संस्थेची स्थापना श्रद्धेय मोरोपंत पिंगळे यांच्या प्रेरणेने पुण्यात २००२
+                                साली झाली. "पब्लिक चॅरिटेबल ट्रस्ट" म्हणून नोंदणीकृत, आमची संस्था भारतीय गाय-आधारित
+                                जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित आहे.</p>
+                            <p>आम्ही कृषी, आरोग्य आणि पर्यावरण या क्षेत्रात पंचगव्याच्या वैज्ञानिक महत्त्वाला प्रोत्साहन
+                                देतो, जेणेकरून एक शाश्वत आणि समृद्ध समाज निर्माण होईल.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="images/research.png" alt="Shraddheya Moropant Pingle"
+                            class="rounded-2xl shadow-2xl w-3/4 max-w-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact in Numbers Section -->
+        <section class="py-28 bg-white">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        आमचा प्रभाव</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <p class="text-5xl md:text-6xl font-bold accent-gold counter" data-target="400">0</p>
+                        <p class="text-lg text-gray-600 mt-2">शेतकऱ्यांना मार्गदर्शन</p>
+                    </div>
+                    <div>
+                        <p class="text-5xl md:text-6xl font-bold accent-gold counter" data-target="350">0</p>
+                        <p class="text-lg text-gray-600 mt-2">टन निर्माल्य प्रक्रिया</p>
+                    </div>
+                    <div>
+                        <p class="text-5xl md:text-6xl font-bold accent-gold counter" data-target="87">0</p>
+                        <p class="text-lg text-gray-600 mt-2">गायींचे वितरण</p>
+                    </div>
+                    <div>
+                        <p class="text-5xl md:text-6xl font-bold accent-gold counter" data-target="73">0</p>
+                        <p class="text-lg text-gray-600 mt-2">रुग्णांवर उपचार</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-28">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        आमचे मुख्य उपक्रम</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Project Cards with Icons -->
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">गो-आधारित शेती</h3>
+                        <p class="text-gray-600">कमी खर्चात चांगले उत्पन्न मिळवून देणारा शेती प्रयोग. १६ गावांमध्ये ४००
+                            हून अधिक शेतकऱ्यांना मार्गदर्शन.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                </path>
+                            </svg></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">पंचगव्य चिकित्सा</h3>
+                        <p class="text-gray-600">कॅन्सर, मधुमेह, त्वचा व मूत्र विकारांवर यशस्वी उपचार. ७३ हून अधिक
+                            रुग्णांवर यशस्वी उपचार.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">निर्माल्य व्यवस्थापन</h3>
+                        <p class="text-gray-600">३५० टन निर्माल्यावर प्रक्रिया करून सेंद्रिय खत व अगरबत्ती निर्मिती,
+                            महिला सक्षमीकरणास चालना.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="py-28 bg-white">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">कै.
+                        श्री. मोरोपंत पिंगळे गो-सेवा पुरस्कार</h2>
+                </div>
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-center text-lg text-gray-600 leading-relaxed mb-12">२०१० पासून, आम्ही गो-सेवा
+                        क्षेत्रात उल्लेखनीय कार्य करणाऱ्या व्यक्ती आणि संस्थांना या प्रतिष्ठित पुरस्काराने सन्मानित
+                        करतो.</p>
+                    <div class="relative pl-8 border-l-4 border-gray-200">
+                        <!-- Award Item -->
+                        <div class="mb-10 relative">
+                            <div
+                                class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
+                            </div>
+                            <p class="text-xl font-semibold accent-gold">२०१९, पुणे</p>
+                            <p class="text-gray-700">प.पू. सरसंघचालक मा. मोहनजी भागवत यांच्या हस्ते पुरस्कार प्रदान.
+                                प्रमुख पुरस्कारार्थी: गोसेवा परिवार, कोलकाता; वैद्या ज्योती मुंदरगी; वैद्य अजित उदावंत.
+                            </p>
+                        </div>
+                        <div class="mb-10 relative">
+                            <div
+                                class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
+                            </div>
+                            <p class="text-xl font-semibold accent-gold">२०१८, रांजणगाव</p>
+                            <p class="text-gray-700">प्रमुख अतिथी: मा. कथुरिया, अध्यक्ष, कामधेनू आयोग. पुरस्कारार्थी:
+                                श्री. सुनिलजी मानसिंहखा, श्री. पद्माकर चिंचोळे, आणि इतर.</p>
+                        </div>
+                        <div class="relative">
+                            <div
+                                class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
+                            </div>
+                            <p class="text-xl font-semibold accent-gold">२०१०, पुणे (प्रारंभ)</p>
+                            <p class="text-gray-700">प्रमुख अतिथी: ऍड. बिपिनभाई शाह. पुरस्कारार्थी: जनभारती न्यास,
+                                कोल्हापूर; वैद्या नंदिनी भोजराज, नागपूर.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-28">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        आमची टीम</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-3xl font-bold marathi-heading primary-green mb-6 text-center">संस्थेचे विश्वस्त
+                        </h3>
+                        <ul class="grid grid-cols-2 gap-x-8 gap-y-4 text-gray-700 text-lg">
+                            <li>श्री. राजेंद्र लुंकड</li>
+                            <li>श्री. बापूराव कुलकर्णी</li>
+                            <li>श्री. अनिल व्यास</li>
+                            <li>श्री. चिंतामणी चितळे</li>
+                            <li>श्री. प्रमोद कुलकर्णी</li>
+                            <li>श्री. हेमंत दांडेगावकर</li>
+                            <li>श्री. सतीश पारखी</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-3xl font-bold marathi-heading primary-green mb-6 text-center">कार्यकारी टीम</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-lg">टास्क फोर्स टीम</h4>
+                                <p class="text-gray-600">श्री. कल्याण कुलकर्णी, श्री. प्रशांत करमरकर आणि १०० हून अधिक
+                                    स्वयंसेवक.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">संशोधक टीम</h4>
+                                <p class="text-gray-600">डॉ. प्रसाद खंडागळे यांच्या नेतृत्वाखाली ८ डॉक्टर्स आणि १०
+                                    संशोधक विद्यार्थी.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="primary-green-bg text-white">
+        <div class="container mx-auto px-6 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold marathi-heading">चळवळीत सामील व्हा</h2>
+                <p class="text-gray-300 mt-2 max-w-2xl mx-auto">तुमचा वेळ, कौशल्य किंवा देणगी देऊन या महान कार्यात
+                    योगदान द्या. एकत्र मिळून आपण एक सकारात्मक बदल घडवू शकतो.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-bold marathi-heading mb-3">पत्ता</h3>
+                    <p class="text-gray-300">अ/3, विष्णुकृपा सोसायटी, नवा विष्णू चौक, बाजीराव रोड, पुणे ४११००२.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold marathi-heading mb-3">संपर्क</h3>
+                    <p class="text-gray-300">श्री. अनिल व्यास: 8888871310</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold marathi-heading mb-3">ईमेल</h3>
+                    <p class="text-gray-300">info@govidnyan-pune.org</p>
+                </div>
+            </div>
+            <div class="mt-16 border-t border-green-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 गो विज्ञान संशोधन संस्था. सर्व हक्क राखीव.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Number counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+    </script>
+
+</body>
+
+</html>
