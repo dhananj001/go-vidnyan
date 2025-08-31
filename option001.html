@@ -11,13 +11,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
         rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Advanced UI/UX styles for an immersive experience */
         :root {
             --color-background: #fdfdfc;
             --color-text: #1f2937;
             --color-primary-green: #14532d;
+            /* A deep, natural green */
             --color-accent-gold: #b45309;
+            /* A rich, earthy gold/orange */
             --color-light-gray: #f3f4f6;
         }
 
@@ -116,15 +120,16 @@
                     <p class="text-xs text-gray-500 -mt-1">पुणे | Est. 2002</p>
                 </div>
             </a>
-            <div class="hidden md:flex items-center space-x-10 text-gray-600 font-semibold">
-                <a href="#about" class="hover:primary-green transition duration-300">About Us</a>
-                <a href="#projects" class="hover:primary-green transition duration-300">Our Work</a>
-                <a href="#awards" class="hover:primary-green transition duration-300">Awards</a>
-                <a href="#contact" class="hover:primary-green transition duration-300">Contact</a>
+            <div class="hidden md:flex items-center space-x-8 text-gray-600 font-semibold">
+                <a href="#about" class="hover:primary-green transition duration-300">संस्था परिचय</a>
+                <a href="#projects" class="hover:primary-green transition duration-300">उपक्रम</a>
+                <a href="#awards" class="hover:primary-green transition duration-300">पुरस्कार</a>
+                <a href="#gallery" class="hover:primary-green transition duration-300">गॅलरी</a>
+                <a href="#contact" class="hover:primary-green transition duration-300">संपर्क</a>
             </div>
-            <a href="#contact"
-                class="hidden md:block accent-gold-bg text-white font-bold py-3 px-8 rounded-full hover:bg-amber-800 transition duration-300 shadow-md transform hover:scale-105">Join
-                Us</a>
+            <a href="#join-us"
+                class="hidden md:block accent-gold-bg text-white font-bold py-3 px-8 rounded-full hover:bg-amber-800 transition duration-300 shadow-md transform hover:scale-105">सहभागी
+                व्हा</a>
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
@@ -132,14 +137,16 @@
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 border-t">
-            <a href="#about" class="block py-2 text-gray-700 hover:primary-green">About Us</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:primary-green">Our Work</a>
-            <a href="#awards" class="block py-2 text-gray-700 hover:primary-green">Awards</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:primary-green">Contact</a>
-            <a href="#contact"
-                class="block w-full text-center mt-2 accent-gold-bg text-white font-bold py-2 px-5 rounded-full">Join
-                Us</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:primary-green">संस्था परिचय</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:primary-green">उपक्रम</a>
+            <a href="#awards" class="block py-2 text-gray-700 hover:primary-green">पुरस्कार</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:primary-green">गॅलरी</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:primary-green">संपर्क</a>
+            <a href="#join-us"
+                class="block w-full text-center mt-2 accent-gold-bg text-white font-bold py-2 px-5 rounded-full">सहभागी
+                व्हा</a>
         </div>
     </header>
 
@@ -169,15 +176,30 @@
                             जोडलेले, विज्ञानाने प्रेरित</h2>
                         <div class="text-lg text-gray-600 leading-relaxed space-y-6">
                             <p>गो-विज्ञान संशोधन संस्थेची स्थापना श्रद्धेय मोरोपंत पिंगळे यांच्या प्रेरणेने पुण्यात २००२
-                                साली झाली. "पब्लिक चॅरिटेबल ट्रस्ट" म्हणून नोंदणीकृत, आमची संस्था भारतीय गाय-आधारित
-                                जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित आहे.</p>
-                            <p>आम्ही कृषी, आरोग्य आणि पर्यावरण या क्षेत्रात पंचगव्याच्या वैज्ञानिक महत्त्वाला प्रोत्साहन
-                                देतो, जेणेकरून एक शाश्वत आणि समृद्ध समाज निर्माण होईल.</p>
+                                साली झाली. "पब्लिक चॅरिटेबल ट्रस्ट" म्हणून नोंदणीकृत, आमची संस्था गो-आधारित शेती,
+                                पंचगव्य चिकित्सा, निर्माल्य प्रक्रिया, अगरबत्ती निर्मिती असे अनेक विषय हाताळत आहे.</p>
+                            <p>श्रद्धेय मोरोपंत पिंगळे यांचे गोसेवेतील मूलभूत चिंतन व द्रष्टेपण लक्षात घेऊन, संस्थेने
+                                २०१० पासून त्यांच्या नावाने 'गो-सेवा पुरस्कार' देण्यास सुरुवात केली.</p>
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <img src="images/research.png" alt="Shraddheya Moropant Pingle"
-                            class="rounded-2xl shadow-2xl w-3/4 max-w-md">
+                        <img src="images/research.png" alt="Research and Development"
+                            class="rounded-2xl shadow-2xl w-full max-w-md">
+                    </div>
+                </div>
+                <!-- Mission Section -->
+                <div class="mt-24 fade-in-up">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                            मिशन व ध्येयपथ</h2>
+                    </div>
+                    <div class="max-w-4xl mx-auto text-center text-lg text-gray-700 space-y-4">
+                        <p>भारतीय गायींचे जतन, संवर्धन आणि संरक्षण करणे. कृषी, आरोग्य इत्यादी क्षेत्रात आणि समाजात
+                            “भारतीय गाय” आधारित जीवनशैलीचा परिचय करून देणे हे संस्थेचे ध्येय आहे.</p>
+                        <p>वैज्ञानिक दृष्टिकोनातून सिद्ध झालेल्या देशी गायीच्या पंचगव्यावर आधारित मानवी
+                            आरोग्य-कृषी-उर्जा-पर्यावरण पूरक जीवनपद्धती पुनर्स्थापित करणे आणि नागरिकांना विविध
+                            उत्पादनांची उपयोगिता समजावून ती वापरण्यास प्रवृत्त करणे.</p>
                     </div>
                 </div>
             </div>
@@ -219,38 +241,43 @@
                         आमचे मुख्य उपक्रम</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Project Cards with Icons -->
+                    <!-- Project Cards -->
                     <div class="bg-white rounded-2xl p-8 text-center card-hover">
-                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg></div>
-                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">गो-आधारित शेती</h3>
-                        <p class="text-gray-600">कमी खर्चात चांगले उत्पन्न मिळवून देणारा शेती प्रयोग. १६ गावांमध्ये ४००
-                            हून अधिक शेतकऱ्यांना मार्गदर्शन.</p>
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-leaf"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">गो-आधारित शेती (CBOF)</h3>
+                        <p class="text-gray-600">कमी खर्चात (८०-९०% बचत) चांगले उत्पन्न मिळवून देणारा प्रयोग. १६
+                            गावांमध्ये ४०० हून अधिक शेतकऱ्यांना मार्गदर्शन.</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 text-center card-hover">
-                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                </path>
-                            </svg></div>
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
                         <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">पंचगव्य चिकित्सा</h3>
                         <p class="text-gray-600">कॅन्सर, मधुमेह, त्वचा व मूत्र विकारांवर यशस्वी उपचार. ७३ हून अधिक
                             रुग्णांवर यशस्वी उपचार.</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 text-center card-hover">
-                        <div class="flex justify-center mb-4"><svg class="w-16 h-16 primary-green" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                </path>
-                            </svg></div>
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-recycle"></i></div>
                         <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">निर्माल्य व्यवस्थापन</h3>
                         <p class="text-gray-600">३५० टन निर्माल्यावर प्रक्रिया करून सेंद्रिय खत व अगरबत्ती निर्मिती,
                             महिला सक्षमीकरणास चालना.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-moon"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">पौर्णिमा गाईच्या सान्निध्यात
+                        </h3>
+                        <p class="text-gray-600">२०१३ पासून भोसरी येथील पांजरापोळ-गोशाळेत दर पौर्णिमेला व्याख्यान,
+                            गोपूजन व गोग्रास वितरण.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-seedling"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">किचन गार्डन प्रकल्प</h3>
+                        <p class="text-gray-600">शाळा आणि घरांसाठी सेंद्रिय भाजीपाला पिकवण्यासाठी मार्गदर्शन व
+                            प्रोत्साहन.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-cow"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-3">भारतीय गायींचे वितरण</h3>
+                        <p class="text-gray-600">अहिल्यानगर जिल्ह्यातील मांजरसुंभा व देवगाव येथे ८७ ग्रामस्थांना भाकड
+                            देशी गायींचे वितरण.</p>
                     </div>
                 </div>
             </div>
@@ -265,35 +292,135 @@
                 </div>
                 <div class="max-w-5xl mx-auto">
                     <p class="text-center text-lg text-gray-600 leading-relaxed mb-12">२०१० पासून, आम्ही गो-सेवा
-                        क्षेत्रात उल्लेखनीय कार्य करणाऱ्या व्यक्ती आणि संस्थांना या प्रतिष्ठित पुरस्काराने सन्मानित
-                        करतो.</p>
+                        क्षेत्रात (संशोधन, सेंद्रिय शेती, पंचगव्य चिकित्सा) उल्लेखनीय कार्य करणाऱ्या व्यक्ती आणि
+                        संस्थांना या प्रतिष्ठित पुरस्काराने सन्मानित करतो.</p>
                     <div class="relative pl-8 border-l-4 border-gray-200">
-                        <!-- Award Item -->
+                        <!-- Award Item 2023 -->
+                        <div class="mb-10 relative">
+                            <div
+                                class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
+                            </div>
+                            <p class="text-xl font-semibold accent-gold">२०२३, बारामती</p>
+                            <p class="text-md text-gray-500">अध्यक्ष: श्री. केशवराव सर्जेराव जगताप, प्रमुख वक्ते: श्री.
+                                भैय्याजी जोशी</p>
+                            <p class="text-gray-700 mt-1">पुरस्कारार्थी: वैद्य श्री. चंदन मलजी घोटा, श्रीमती. नगीना
+                                मोहम्मद अन्वर खान, श्री. प्रदीप दत्तात्रय मदने.</p>
+                        </div>
+                        <!-- Award Item 2022 -->
+                        <div class="mb-10 relative">
+                            <div
+                                class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
+                            </div>
+                            <p class="text-xl font-semibold accent-gold">२०२२, नगर</p>
+                            <p class="text-md text-gray-500">प्रमुख वक्ते: मा. नाना जाधव, प्रमुख अतिथी: मा. राधाकृष्ण
+                                विखेपाटील</p>
+                            <p class="text-gray-700 mt-1">पुरस्कारार्थी: सुयश चॅरिटेबल ट्रस्ट, डॉ. अजित रावळ, श्री. दिपक
+                                नरवडे, स्थानिक गोपालक.</p>
+                        </div>
+                        <!-- Award Item 2019 -->
                         <div class="mb-10 relative">
                             <div
                                 class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
                             </div>
                             <p class="text-xl font-semibold accent-gold">२०१९, पुणे</p>
-                            <p class="text-gray-700">प.पू. सरसंघचालक मा. मोहनजी भागवत यांच्या हस्ते पुरस्कार प्रदान.
-                                प्रमुख पुरस्कारार्थी: गोसेवा परिवार, कोलकाता; वैद्या ज्योती मुंदरगी; वैद्य अजित उदावंत.
-                            </p>
+                            <p class="text-md text-gray-500">प्रमुख वक्ते: प.पू. सरसंघचालक मा. मोहनजी भागवत</p>
+                            <p class="text-gray-700 mt-1">पुरस्कारार्थी: गोसेवा परिवार, कोलकाता; वैद्या ज्योती मुंदरगी;
+                                वैद्य अजित उदावंत; श्याम अगरवाल.</p>
                         </div>
+                        <!-- Award Item 2018 -->
                         <div class="mb-10 relative">
                             <div
                                 class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
                             </div>
                             <p class="text-xl font-semibold accent-gold">२०१८, रांजणगाव</p>
-                            <p class="text-gray-700">प्रमुख अतिथी: मा. कथुरिया, अध्यक्ष, कामधेनू आयोग. पुरस्कारार्थी:
-                                श्री. सुनिलजी मानसिंहखा, श्री. पद्माकर चिंचोळे, आणि इतर.</p>
+                            <p class="text-md text-gray-500">प्रमुख अतिथी: मा. कथुरिया (अध्यक्ष, कामधेनू आयोग)</p>
+                            <p class="text-gray-700 mt-1">पुरस्कारार्थी: श्री. सुनिलजी मानसिंहखा, श्री. पद्माकर चिंचोळे,
+                                श्री. सुरेंद्र देव, आणि इतर.</p>
                         </div>
-                        <div class="relative">
+                        <!-- Add other years similarly -->
+                        <div class="mb-10 relative">
                             <div
                                 class="absolute w-5 h-5 bg-accent-gold rounded-full -left-[26px] border-4 border-white">
                             </div>
                             <p class="text-xl font-semibold accent-gold">२०१०, पुणे (प्रारंभ)</p>
-                            <p class="text-gray-700">प्रमुख अतिथी: ऍड. बिपिनभाई शाह. पुरस्कारार्थी: जनभारती न्यास,
-                                कोल्हापूर; वैद्या नंदिनी भोजराज, नागपूर.</p>
+                            <p class="text-md text-gray-500">प्रमुख अतिथी: ऍड. बिपिनभाई शाह</p>
+                            <p class="text-gray-700 mt-1">पुरस्कारार्थी: जनभारती न्यास, कोल्हापूर; वैद्या नंदिनी भोजराज,
+                                नागपूर; श्री. गाडे (गोसेवक).</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-28">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        क्षणचित्रे (गॅलरी)</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/228B22/FFFFFF?text=Go-Seva+Award+2019"
+                            alt="Award Ceremony 2019"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/228B22/FFFFFF?text=Go-Seva+Award+2012"
+                            alt="Award Ceremony 2012"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/228B22/FFFFFF?text=CBOF+Farming"
+                            alt="CBOF Farming Project"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/228B22/FFFFFF?text=Audience+at+Event"
+                            alt="Audience at an Event"
+                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indian Cow Breeds Section -->
+        <section id="cow-breeds" class="py-28 bg-white">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        भारतीय गायींच्या जाती</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Gir" alt="Gir Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">गीर (Gir)</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Sahiwal" alt="Sahiwal Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">साहिवाल (Sahiwal)</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Kankrej" alt="Kankrej Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">कांकरेज (Kankrej)</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Tharparkar" alt="Tharparkar Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">थरपारकर (Tharparkar)</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Haryana" alt="Haryana Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">हरियाणा (Haryana)</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/400x300/8B4513/FFFFFF?text=Sindhi" alt="Sindhi Cow"
+                            class="rounded-lg shadow-md mx-auto mb-2">
+                        <h4 class="font-semibold marathi-heading">सिंधी (Sindhi)</h4>
                     </div>
                 </div>
             </div>
@@ -322,31 +449,64 @@
                     </div>
                     <div class="bg-white p-8 rounded-2xl shadow-lg">
                         <h3 class="text-3xl font-bold marathi-heading primary-green mb-6 text-center">कार्यकारी टीम</h3>
-                        <div class="space-y-4">
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-bold text-lg">टास्क फोर्स टीम</h4>
-                                <p class="text-gray-600">श्री. कल्याण कुलकर्णी, श्री. प्रशांत करमरकर आणि १०० हून अधिक
-                                    स्वयंसेवक.</p>
+                                <h4 class="font-bold text-xl primary-green">टास्क फोर्स टीम</h4>
+                                <p class="text-gray-600">श्री. कल्याण कुलकर्णी, श्री. प्रशांत करमरकर यांच्या
+                                    नेतृत्वाखाली १०० हून अधिक स्वयंसेवक कार्यरत आहेत.</p>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg">संशोधक टीम</h4>
+                                <h4 class="font-bold text-xl primary-green">संशोधक टीम</h4>
                                 <p class="text-gray-600">डॉ. प्रसाद खंडागळे यांच्या नेतृत्वाखाली ८ डॉक्टर्स आणि १०
-                                    संशोधक विद्यार्थी.</p>
+                                    संशोधक विद्यार्थी विविध प्रकल्पांवर काम करत आहेत.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Get Involved Section -->
+        <section id="join-us" class="py-28 bg-white">
+            <div class="container mx-auto px-6 fade-in-up">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green section-title-underline">
+                        चळवळीत सामील व्हा</h2>
+                    <p class="text-lg text-gray-600 mt-8 max-w-3xl mx-auto">तुमचा वेळ, कौशल्य किंवा देणगी देऊन या महान
+                        कार्यात योगदान द्या. एकत्र मिळून आपण एक सकारात्मक बदल घडवू शकतो.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <a href="#" class="block bg-green-50 p-8 text-center rounded-2xl card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-2">स्वयंसेवक नोंदणी</h3>
+                        <p class="text-gray-600">आमच्यासोबत काम करण्यासाठी आणि विविध उपक्रमांमध्ये सहभागी होण्यासाठी
+                            येथे नोंदणी करा.</p>
+                    </a>
+                    <a href="#" class="block bg-green-50 p-8 text-center rounded-2xl card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-comments"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-2">अभिप्राय (Feedback)</h3>
+                        <p class="text-gray-600">तुमचे मत आमच्यासाठी मोलाचे आहे. संस्थेच्या कार्याबद्दल तुमचा अभिप्राय
+                            नोंदवा.</p>
+                    </a>
+                    <a href="#" class="block bg-green-50 p-8 text-center rounded-2xl card-hover">
+                        <div class="text-4xl accent-gold mb-4"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 class="text-2xl font-bold marathi-heading primary-green mb-2">गोशाळा नेटवर्क</h3>
+                        <p class="text-gray-600">तुमच्या जवळील गोशाळेची माहिती देण्यासाठी किंवा शोधण्यासाठी आमच्या
+                            नेटवर्कमध्ये सामील व्हा.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer id="contact" class="primary-green-bg text-white">
         <div class="container mx-auto px-6 py-20">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold marathi-heading">चळवळीत सामील व्हा</h2>
-                <p class="text-gray-300 mt-2 max-w-2xl mx-auto">तुमचा वेळ, कौशल्य किंवा देणगी देऊन या महान कार्यात
-                    योगदान द्या. एकत्र मिळून आपण एक सकारात्मक बदल घडवू शकतो.</p>
+                <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" loading="lazy"
+                    class="h-20 w-20 rounded-full object-cover mx-auto mb-4 border-4 border-green-400">
+                <h2 class="text-4xl font-bold marathi-heading">गो विज्ञान संशोधन संस्था, पुणे</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
                 <div>
@@ -363,7 +523,8 @@
                 </div>
             </div>
             <div class="mt-16 border-t border-green-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 गो विज्ञान संशोधन संस्था. सर्व हक्क राखीव.</p>
+                <p>&copy; 2025 गो विज्ञान संशोधन संस्था. सर्व हक्क राखीव. | <a href="www.govidnyan-pune.org"
+                        class="hover:text-white">www.govidnyan-pune.org</a></p>
             </div>
         </div>
     </footer>
@@ -418,9 +579,11 @@
             });
         }, { threshold: 0.5 });
 
-        counters.forEach(counter => {
-            counterObserver.observe(counter);
-        });
+        // Start counter animation when the section is visible
+        const impactSection = document.querySelector('.counter');
+        if (impactSection) {
+            counterObserver.observe(impactSection.parentElement.parentElement);
+        }
 
     </script>
 
