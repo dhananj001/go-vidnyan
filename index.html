@@ -13,7 +13,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
-        /* Minimalist UI/UX styles */
         :root {
             --primary-green: #16a34a;
             --accent-orange: #ea580c;
@@ -39,14 +38,9 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 95vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-        }
-
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(1px);
         }
 
         .primary-green {
@@ -61,11 +55,6 @@
             color: var(--accent-orange);
         }
 
-        .accent-orange-bg {
-            background-color: var(--accent-orange);
-        }
-
-        /* Minimal transitions */
         .smooth-transition {
             transition: all 0.2s ease;
         }
@@ -80,69 +69,10 @@
             box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
         }
 
-        /* Hero animations */
-        @keyframes bounce {
-
-            0%,
-            20%,
-            53%,
-            80%,
-            100% {
-                transform: translate(-50%, 0);
-            }
-
-            40%,
-            43% {
-                transform: translate(-50%, -8px);
-            }
-
-            70% {
-                transform: translate(-50%, -4px);
-            }
-        }
-
-        .animate-bounce {
-            animation: bounce 2s infinite;
-        }
-
-        /* Button hover effects */
-        .hover\\:scale-105:hover {
-            transform: scale(1.05);
-        }
-
-        /* Active navigation styles */
         .nav-active {
             background-color: rgba(22, 163, 74, 0.1);
             color: var(--primary-green) !important;
             font-weight: 600;
-        }
-
-        .nav-active:hover {
-            background-color: rgba(22, 163, 74, 0.15);
-            color: var(--primary-green) !important;
-        }
-
-        /* Active dropdown button styles (for Projects when on project pages) */
-        .dropdown-btn-active {
-            background-color: rgba(22, 163, 74, 0.08);
-            color: var(--primary-green) !important;
-            font-weight: 600;
-        }
-
-        .dropdown-btn-active:hover {
-            background-color: rgba(22, 163, 74, 0.12);
-            color: var(--primary-green) !important;
-        }
-
-        /* Active dropdown item styles */
-        .dropdown-active {
-            background-color: var(--primary-green);
-            color: white !important;
-        }
-
-        .dropdown-active:hover {
-            background-color: var(--primary-green);
-            color: white !important;
         }
     </style>
 </head>
@@ -153,7 +83,7 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <nav class="container mx-auto px-4 sm:px-6 py-3">
             <div class="flex justify-between items-center">
-                <a href="#" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
                     <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
                     <div>
                         <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
@@ -162,9 +92,9 @@
                 </a>
 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#"
+                    <a href="index.html"
                         class="nav-active text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
-                    <a href="#about"
+                    <a href="about.html"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
 
                     <!-- Projects Dropdown -->
@@ -181,6 +111,14 @@
                         <div
                             class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="py-2">
+                                <a href="projects.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-gray-500">📋</span>
+                                    <div>
+                                        <div class="font-medium">All Projects</div>
+                                        <div class="text-xs text-gray-500">सर्व प्रकल्प</div>
+                                    </div>
+                                </a>
                                 <a href="lectures.html"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-green-500">📅</span>
@@ -209,13 +147,13 @@
                         </div>
                     </div>
 
-                    <a href="#awards"
+                    <a href="awards.html"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
+                    <a href="team.html"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Team</a>
                     <a href="gallery.html"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
-                    <a href="query.html"
-                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Query</a>
-                    <a href="#contact"
+                    <a href="contact.html"
                         class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
                 </div>
 
@@ -228,31 +166,20 @@
             </div>
 
             <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
-                <a href="#about"
+                <a href="index.html"
+                    class="block py-2 px-3 text-green-600 font-semibold bg-green-50 rounded smooth-transition">Home</a>
+                <a href="about.html"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">About</a>
-                <a href="#projects"
-                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Work</a>
-                <a href="#awards"
+                <a href="projects.html"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Projects</a>
+                <a href="awards.html"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Awards</a>
+                <a href="team.html"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Team</a>
                 <a href="gallery.html"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Gallery</a>
-                <a href="query.html"
-                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Query</a>
-                <!-- Project Pages -->
-                <div class="border-t border-gray-200 mt-2 pt-2">
-                    <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
-                    <a href="lectures.html"
-                        class="block py-2 px-3 text-gray-700 hover:bg-green-50 rounded smooth-transition">📅 साप्ताहिक
-                        व्याख्याने</a>
-                    <a href="research.html"
-                        class="block py-2 px-3 text-gray-700 hover:bg-orange-50 rounded smooth-transition">🔬 संशोधन
-                        कार्य</a>
-                    <a href="nirmalya.html"
-                        class="block py-2 px-3 text-gray-700 hover:bg-blue-50 rounded smooth-transition">♻️ निर्माल्य
-                        प्रकल्प</a>
-                </div>
-                <a href="#contact"
-                    class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
+                <a href="contact.html"
+                    class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition font-medium">Contact</a>
             </div>
         </nav>
     </header>
@@ -260,46 +187,40 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-bg text-white relative">
-            <div class="hero-overlay absolute inset-0"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
             <div class="container mx-auto px-4 sm:px-6 relative z-10">
                 <div class="max-w-6xl mx-auto">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <!-- Left Content -->
                         <div class="text-left lg:pr-8">
-                            <!-- Organization Badge -->
-                            <div
-                                class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                                 <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-8 mr-3">
                                 <span class="text-white/90 text-md font-medium">Est. 2002 | पुणे</span>
                             </div>
 
-                            <!-- Main Heading -->
                             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6 leading-tight">
                                 गो विज्ञान संशोधन संस्था
                             </h1>
 
-                            <!-- Tagline -->
                             <h2 class="text-2xl md:text-3xl font-semibold text-amber-100 mb-6 marathi-heading">
                                 गोसेवा, राष्ट्ररक्षा
                             </h2>
 
-                            <!-- Description -->
                             <p class="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl">
                                 वैज्ञानिक दृष्टीकोनातून पंचगव्य-आधारित जीवनशैली पुनर्स्थापित करून भारतीय गायींचे संगोपन,
                                 संवर्धन आणि संरक्षण करणे
                             </p>
 
-                            <!-- Call to Action Buttons -->
                             <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="#about"
+                                <a href="about.html"
                                     class="inline-flex items-center justify-center bg-white text-green-700 font-semibold py-3 px-8 rounded-lg smooth-transition hover:bg-gray-50 shadow-lg">
-                                    <span>आमचे कार्य पहा</span>
+                                    <span>आमच्याबद्दल जाणून घ्या</span>
                                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </a>
-                                <a href="#contact"
+                                <a href="contact.html"
                                     class="inline-flex items-center justify-center border-2 border-white text-white font-semibold py-3 px-8 rounded-lg smooth-transition hover:bg-white hover:text-green-700">
                                     संपर्क करा
                                 </a>
@@ -335,1248 +256,238 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 lg:py-12 bg-white">
+        <!-- About Preview Section -->
+        <section class="py-16 lg:py-20 bg-white">
             <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-green-700 font-semibold text-md uppercase tracking-wider">आमच्याबद्दल</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">
-                        परंपरेशी जोडलेले, विज्ञानाने प्रेरित
-                    </h2>
-                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <!-- Content Side -->
-                    <div class="order-2 lg:order-1">
-                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                            <!-- Establishment Info -->
-                            <div class="flex items-start space-x-4 mb-8 p-6 bg-white rounded-xl shadow-sm">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg marathi-heading mb-2">संस्थेची स्थापना
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        गो-विज्ञान संशोधन संस्थेची स्थापना श्रद्धेय मोरोपंत पिंगळे यांच्या प्रेरणेने
-                                        पुण्यात २००२ साली झाली.
-                                        <span class="font-semibold text-green-700">"पब्लिक चॅरिटेबल ट्रस्ट"</span>
-                                        म्हणून नोंदणीकृत.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Mission -->
-                            <div class="flex items-start space-x-4 mb-8 p-6 bg-white rounded-xl shadow-sm">
-                                <div class="flex-shrink-0">
-                                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-gray-900 text-lg marathi-heading mb-2">आमचे ध्येय</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित आहे, वैज्ञानिक
-                                        दृष्टीकोनातून
-                                        पंचगव्याच्या महत्त्वाला चालना देणे.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Focus Areas -->
-                            <div class="p-6 bg-gradient-to-r from-green-50 to-orange-50 rounded-xl">
-                                <h3 class="font-bold text-gray-900 text-lg marathi-heading mb-4 text-center">
-                                    कार्यक्षेत्रे</h3>
-                                <div class="grid grid-cols-3 gap-4 text-center">
-                                    <div class="bg-white rounded-lg p-4 shadow-sm">
-                                        <div class="text-green-600 font-semibold text-md marathi-heading">कृषी</div>
-                                    </div>
-                                    <div class="bg-white rounded-lg p-4 shadow-sm">
-                                        <div class="text-green-600 font-semibold text-md marathi-heading">आरोग्य</div>
-                                    </div>
-                                    <div class="bg-white rounded-lg p-4 shadow-sm">
-                                        <div class="text-green-600 font-semibold text-md marathi-heading">पर्यावरण</div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-orange-400 rounded-2xl transform rotate-3"></div>
+                        <div class="relative bg-white p-2 rounded-2xl shadow-xl">
+                            <img src="images/research.png" alt="Research and Development"
+                                class="rounded-xl w-full h-auto object-cover">
                         </div>
                     </div>
-
-                    <!-- Image Side -->
-                    <div class="order-1 lg:order-2 flex justify-center">
-                        <div class="relative">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-br from-green-400 to-orange-400 rounded-2xl transform rotate-6">
-                            </div>
-                            <div class="relative bg-white p-2 rounded-2xl shadow-xl">
-                                <img src="images/research.png" alt="Research and Development"
-                                    class="rounded-xl w-full max-w-md h-auto object-cover">
-                            </div>
-                            <!-- Decorative elements -->
-                            <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full"></div>
-                            <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full"></div>
+                    <div>
+                        <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
+                            <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">आमच्याबद्दल</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Stats Bar -->
-                <div class="mt-16 bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <div class="text-center mb-0">
-                        <h3 class="text-2xl font-bold marathi-heading">शाश्वत निरामय समाज निर्मितीसाठी</h3>
-                        <p class="text-green-100 mt-2">वैज्ञानिक दृष्टा सिद्ध झालेल्या पंचगव्य वापराला प्रोत्साहन</p>
-                    </div>
-                    <div class="flex justify-center">
-                        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
-                            <span class="text-lg font-semibold">२००२ पासून सेवारत</span>
+                        <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-6">
+                            परंपरेशी जोडलेले, विज्ञानाने प्रेरित
+                        </h2>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            गो-विज्ञान संशोधन संस्थेची स्थापना श्रद्धेय मोरोपंत पिंगळे यांच्या प्रेरणेने पुण्यात २००२ साली झाली.
+                            भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी आम्ही समर्पित आहोत.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <span class="text-green-600 font-semibold marathi-heading">कृषी</span>
+                            </div>
+                            <div class="text-center p-4 bg-orange-50 rounded-lg">
+                                <span class="text-orange-600 font-semibold marathi-heading">आरोग्य</span>
+                            </div>
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <span class="text-blue-600 font-semibold marathi-heading">पर्यावरण</span>
+                            </div>
                         </div>
+                        <a href="about.html"
+                            class="inline-flex items-center bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                            <span>अधिक जाणून घ्या</span>
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Impact Section -->
-        <!-- <section class="py-16 bg-gray-50">
+        <!-- Featured Projects Section -->
+        <section class="py-16 lg:py-20 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green">आमचा प्रभाव</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-bold accent-orange mb-2">400+</p>
-                        <p class="text-gray-600">शेतकऱ्यांना मार्गदर्शन</p>
+                    <div class="inline-flex items-center bg-orange-50 rounded-full px-4 py-2 mb-4">
+                        <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">आमचे प्रकल्प</span>
                     </div>
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-bold accent-orange mb-2">350</p>
-                        <p class="text-gray-600">टन निर्माल्य प्रक्रिया</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-bold accent-orange mb-2">87</p>
-                        <p class="text-gray-600">गायींचे वितरण</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl md:text-4xl font-bold accent-orange mb-2">500+</p>
-                        <p class="text-gray-600">रुग्णांवर उपचार</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-16 lg:py-20 bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-green-700 font-semibold text-md uppercase tracking-wider">प्रकल्प</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">
-                        गोविद्यान प्रकल्प
+                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">
+                        विशेष प्रकल्प
                     </h2>
-                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4"></div>
-                    <p class="text-gray-700 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
-                        संस्थेने राबिलेले विविध महत्वाचे प्रकल्प - भारतीय गायींच्या संवर्धनासाठी आणि शाश्वत विकासासाठी
-                    </p>
+                    <div class="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
                 </div>
 
-                <div class="max-w-7xl mx-auto">
-                    <!-- Ongoing Projects Subsection -->
-                    <div class="mb-16">
-                        <h3 class="text-2xl md:text-3xl font-bold marathi-heading primary-green mb-8 text-center">सध्या
-                            सुरू
-                            असलेले प्रकल्प</h3>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                            <!-- Ongoing Project 1: Digital Cow Health Monitoring -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">1</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">डिजिटल गाय
-                                            आरोग्य
-                                            निगराणी प्रणाली</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">आधुनिक तंत्रज्ञानाचा वापर
-                                            करून
-                                            भारतीय गायींच्या आरोग्यावर रिअल-टाइम निगराणी ठेवण्यासाठी डिजिटल प्लॅटफॉर्म
-                                            विकसित करणे. IoT सेंसर आणि मोबाइल ऍपचा वापर.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-red-50 to-red-100 rounded-lg p-3 border-l-4 border-red-500">
-                                            <p class="text-red-700 font-medium text-md"><strong>प्रभाव:</strong>
-                                                रिअल-टाइम
-                                                हेल्थ मॉनिटरिंग, लवकर आजार निदान आणि गायींच्या उत्पादनात वाढ</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Lectures -->
+                    <a href="lectures.html" class="group">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-3xl">📅</span>
                             </div>
-
-                            <!-- Ongoing Project 2: Advanced Panchgavya Research -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">2</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">प्रगत पंचगव्य
-                                            संशोधन आणि विकास</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">पंचगव्याच्या नवीन
-                                            फॉर्म्युलेशन्स, संरक्षक आणि त्यांच्या आरोग्य फायद्यांवर वैज्ञानिक संशोधन.
-                                            आधुनिक
-                                            प्रयोगशाळा सुविधांचा वापर.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-pink-50 to-pink-100 rounded-lg p-3 border-l-4 border-pink-500">
-                                            <p class="text-pink-700 font-medium text-md"><strong>प्रभाव:</strong> नवीन
-                                                उत्पादने, प्रभावी उपचार पद्धती आणि वैज्ञानिक प्रमाणीकरण</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Ongoing Project 3: Sustainable Farming Training -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">3</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">शाश्वत शेती
-                                            प्रशिक्षण कार्यक्रम</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">शेतकऱ्यांना गो-आधारित
-                                            शाश्वत
-                                            शेती तंत्रे, जैविक खते आणि पर्यावरण अनुकूल पद्धती शिकवण्यासाठी ऑनलाइन आणि
-                                            ऑफलाइन
-                                            प्रशिक्षण कार्यक्रम.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-cyan-50 to-cyan-100 rounded-lg p-3 border-l-4 border-cyan-500">
-                                            <p class="text-cyan-700 font-medium text-md"><strong>प्रभाव:</strong> 1000+
-                                                शेतकरी प्रशिक्षित, उत्पादनात 40% वाढ आणि पर्यावरण संरक्षण</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Ongoing Project 4: Panchgavya Product Development -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">4</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">पंचगव्य उत्पाद
-                                            विकास</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">पंचगव्याच्या आधारावर
-                                            आरोग्यदायी आणि पर्यावरण अनुकूल उत्पादने विकसित करणे, जसे की सौंदर्य
-                                            प्रसाधने,
-                                            आरोग्य पूरक आणि घरगुती वापराची उत्पादने.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg p-3 border-l-4 border-yellow-500">
-                                            <p class="text-yellow-700 font-medium text-md"><strong>प्रभाव:</strong> नवीन
-                                                उत्पाद लाइन, रोजगार निर्मिती आणि शाश्वत जीवनशैली प्रोत्साहन</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="text-xl font-bold marathi-heading text-gray-900 mb-3">साप्ताहिक व्याख्याने</h3>
+                            <p class="text-gray-600 mb-4">दर रविवारी गोविज्ञान विषयावर मार्गदर्शक व्याख्याने</p>
+                            <span class="text-green-600 font-medium inline-flex items-center">
+                                अधिक पहा
+                                <svg class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Featured Project Pages Section -->
-                    <div class="mb-16">
-                        <h3 class="text-2xl md:text-3xl font-bold marathi-heading primary-green mb-8 text-center">
-                            विशेष प्रकल्प पृष्ठे
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                            <!-- Lectures Page Link -->
-                            <a href="lectures.html"
-                                class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 shadow-md border border-green-200 hover:shadow-xl hover:border-green-400 transition-all duration-300 group block">
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-                                    <h4 class="text-xl font-bold marathi-heading primary-green mb-2">साप्ताहिक
-                                        व्याख्याने</h4>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                        देशी गायींवरील साप्ताहिक व्याख्याने व परिसंवाद - पंचगव्य, आरोग्य आणि शेती विषयक
-                                        ज्ञानप्रसार
-                                    </p>
-                                    <span
-                                        class="inline-flex items-center text-green-600 font-semibold text-sm group-hover:text-green-700">
-                                        अधिक माहिती
-                                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </span>
-                                </div>
-                            </a>
-
-                            <!-- Research Page Link -->
-                            <a href="research.html"
-                                class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 shadow-md border border-orange-200 hover:shadow-xl hover:border-orange-400 transition-all duration-300 group block">
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                                        </svg>
-                                    </div>
-                                    <h4 class="text-xl font-bold marathi-heading accent-orange mb-2">संशोधन कार्य</h4>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                        पंचगव्य, A2 दूध, गो-आधारित शेती आणि आरोग्य यावर वैज्ञानिक संशोधन
-                                    </p>
-                                    <span
-                                        class="inline-flex items-center text-orange-600 font-semibold text-sm group-hover:text-orange-700">
-                                        अधिक माहिती
-                                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </span>
-                                </div>
-                            </a>
-
-                            <!-- Nirmalya Page Link -->
-                            <a href="nirmalya.html"
-                                class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-md border border-blue-200 hover:shadow-xl hover:border-blue-400 transition-all duration-300 group block">
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                        </svg>
-                                    </div>
-                                    <h4 class="text-xl font-bold marathi-heading text-blue-600 mb-2">निर्माल्य प्रकल्प
-                                    </h4>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                        गणेशोत्सव निर्माल्य कंपोस्टिंग प्रकल्प - ३५० टन निर्माल्यावर प्रक्रिया
-                                    </p>
-                                    <span
-                                        class="inline-flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-700">
-                                        अधिक माहिती
-                                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </span>
-                                </div>
-                            </a>
+                    <!-- Research -->
+                    <a href="research.html" class="group">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-orange-200 transition-all duration-300 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-3xl">🔬</span>
+                            </div>
+                            <h3 class="text-xl font-bold marathi-heading text-gray-900 mb-3">संशोधन कार्य</h3>
+                            <p class="text-gray-600 mb-4">पंचगव्य आधारित संशोधन आणि वैज्ञानिक अभ्यास</p>
+                            <span class="text-orange-600 font-medium inline-flex items-center">
+                                अधिक पहा
+                                <svg class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Past Projects Subsection -->
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold marathi-heading primary-green mb-8 text-center">2024
-                            च्या
-                            आधी राबवलेले प्रकल्प</h3>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                            <!-- Project 1: CBOF -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">1</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">भारतीय
-                                            गायींच्या
-                                            आधारावर शेती (CBOF)</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">देशी गायीच्या पंचगव्यावर व
-                                            प्रामुख्याने गोमय-गोमुत्राचा उपयोग करून कमी खर्चात (80-90 टक्के बचत) चांगले
-                                            उत्पन्न मिळवून देणारा शेती प्रयोग.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-3 border-l-4 border-green-500">
-                                            <p class="text-green-700 font-medium text-md"><strong>प्रभाव:</strong>
-                                                अहिल्यानगर
-                                                जिल्ह्यातील मांजरसुंभा, देवगाव, पाणोली, दैठणेगुंजाळ आणि फलटण जवळ नांदल
-                                                परिसरातील 16 गावात 400 शेतकऱ्यांना मार्गदर्शन</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Nirmalya -->
+                    <a href="nirmalya.html" class="group">
+                        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-3xl">♻️</span>
                             </div>
-
-                            <!-- Project 2: Panchgavya Treatment -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">2</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">पंचगव्य
-                                            चिकित्सा
-                                            केंद्र</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">2006 पासून पुण्यात
-                                            चालवलेला
-                                            उपक्रम -
-                                            कॅन्सर-कवरोग, मधुमेह, त्वचा व मूत्र विकार यावर यशस्वी उपचार.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg p-3 border-l-4 border-orange-500">
-                                            <div class="space-y-1">
-                                                <p class="text-orange-700 font-medium text-md"><strong>एकूण
-                                                        रुग्णसंख्या:</strong> 500
-                                                </p>
-                                                <p class="text-gray-600 text-md"><strong>वैद्य:</strong> सौ. ज्योती
-                                                    मुंदगी,
-                                                    श्री.
-                                                    ज्ञानेश्वर साठे</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 3: Ganesh Nirmalya -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">3</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">गणेशोत्सव
-                                            निर्माल्य
-                                            कंपोस्टिंग प्रकल्प</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">पुणे महानगरपालिका व वुमन्स
-                                            इंडिया च्या
-                                            सहाय्याने 2016 ते 2023 या कालावधीत 350 टन निर्माल्यावर प्रक्रिया करून
-                                            सेंद्रिय
-                                            खत निर्मिती.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 border-l-4 border-blue-500">
-                                            <p class="text-blue-700 font-medium text-md"><strong>उद्दिष्ट:</strong> गरजू
-                                                शेतकऱ्यांना
-                                                सेंद्रिय खत पुरवठा</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 4: Cow Distribution -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">4</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">भारतीय गायींचे
-                                            वितरण (गोदान)</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">अहिल्यानगर जिल्ह्यातील
-                                            मांजरसुंभा व
-                                            देवगाव येथे 87 ग्रामस्थांना भावड देशी गायी दे​ण्यात आल्या.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-3 border-l-4 border-green-500">
-                                            <p class="text-green-700 font-medium text-md"><strong>परिणाम:</strong> गायी
-                                                व
-                                                घरातील
-                                                वातावरणात चांगला बदल दिसू लागला</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 5: Panchgavya Products -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">5</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-2">पंचगव्य
-                                            उत्पादनांचे
-                                            प्रशिक्षण व विक्री</h3>
-                                        <p class="text-gray-600 leading-relaxed mb-3 text-md">2003 पासून विविध
-                                            माध्यमातून
-                                            विविध
-                                            ठिकाणी चालविलेला उपक्रम. पुण्यात अनेक विक्री केंद्रे उभी राहिली.</p>
-                                        <div
-                                            class="bg-gradient-to-r from-teal-50 to-teal-100 rounded-lg p-3 border-l-4 border-teal-500">
-                                            <p class="text-teal-700 font-medium text-md"><strong>उद्दिष्ट:</strong>
-                                                पंचगव्य
-                                                उत्पादनांचा व्यापक प्रसार</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 6: Additional Projects -->
-                            <div
-                                class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white font-bold text-base">6</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h3 class="text-xl font-bold marathi-heading primary-green mb-3">इतर महत्वाचे
-                                            उपक्रम
-                                        </h3>
-                                        <div class="space-y-2">
-                                            <div class="flex items-start space-x-2">
-                                                <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-2 flex-shrink-0">
-                                                </div>
-                                                <p class="text-gray-600 text-md"><strong class="text-gray-800">पौर्णिमा
-                                                        कार्यक्रम:</strong> 2013 पासून भोसरी येथील पंजरापोळ-गोशाळेत
-                                                    मासिक
-                                                    कार्यक्रम</p>
-                                            </div>
-                                            <div class="flex items-start space-x-2">
-                                                <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-2 flex-shrink-0">
-                                                </div>
-                                                <p class="text-gray-600 text-md"><strong class="text-gray-800">शाळा,
-                                                        घरासाठी
-                                                        किचन
-                                                        गार्डन प्रकल्प:</strong> स्वयंपूर्णतेसाठी</p>
-                                            </div>
-                                            <div class="flex items-start space-x-2">
-                                                <div class="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-2 flex-shrink-0">
-                                                </div>
-                                                <p class="text-gray-600 text-md"><strong class="text-gray-800">निर्माल्य
-                                                        ते
-                                                        अगरबत्ती
-                                                        प्रकल्प:</strong> महिला सक्षमीकरणासाठी</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="text-xl font-bold marathi-heading text-gray-900 mb-3">निर्माल्य प्रकल्प</h3>
+                            <p class="text-gray-600 mb-4">गणपती उत्सवातील निर्माल्याची पर्यावरणपूरक विल्हेवाट</p>
+                            <span class="text-blue-600 font-medium inline-flex items-center">
+                                अधिक पहा
+                                <svg class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
                         </div>
-                    </div>
+                    </a>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="projects.html"
+                        class="inline-flex items-center border-2 border-green-600 text-green-600 font-semibold py-3 px-8 rounded-lg hover:bg-green-600 hover:text-white transition-all duration-200">
+                        <span>सर्व प्रकल्प पहा</span>
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Awards Section -->
-        <section id="awards" class="py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-green-50">
+        <!-- Awards Preview Section -->
+        <section class="py-16 lg:py-20 bg-gradient-to-br from-orange-50 to-amber-50">
             <div class="container mx-auto px-4 sm:px-6">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-green-700 font-semibold text-md uppercase tracking-wider">पुरस्कार</span>
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-flex items-center bg-orange-100 rounded-full px-4 py-2 mb-4">
+                        <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">पुरस्कार</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">
-                        कै.श्री. मोरोपंत पिंगळे वार्षिक पुरस्कार
+                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-6">
+                        कै. श्री. मोरोपंत पिंगळे वार्षिक पुरस्कार
                     </h2>
-                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4"></div>
-                    <p class="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
-                        २०१० पासून देशी गाय व पंचगव्य उपयोजनावर संशोधन, गो आधारित सेंद्रिय शेती व पंचगव्य चिकित्सेवर
-                        दीर्घकाळ काम करणाऱ्या व्यक्ती व संस्थांना पुरस्कारित केले जाते.
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+                        २०१० पासून दरवर्षी गोसंगोपन, गोसंवर्धन, गोआधारित शेती आणि पंचगव्य संशोधन क्षेत्रात उल्लेखनीय कार्य करणाऱ्यांना सन्मानित करण्यात येते.
                     </p>
-                </div>
-
-                <!-- Awards Timeline -->
-                <div class="max-w-7xl mx-auto">
-                    <div class="relative">
-                        <!-- Timeline Line -->
-                        <div
-                            class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-green-400 via-blue-400 to-purple-400 h-full hidden lg:block">
+                    <div class="flex flex-wrap justify-center gap-8 mb-10">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-orange-600">14+</div>
+                            <div class="text-gray-600 mt-1">वर्षे पुरस्कार वितरण</div>
                         </div>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                            <!-- 2023 -->
-                            <div class="lg:pr-6 mb-8 lg:mb-10 relative">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 left-6">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-md font-bold">23</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०२३ - बारामती
-                                            </h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-green-50 to-orange-50 rounded-lg p-3 mb-3 border-l-4 border-green-500">
-                                            <div class="space-y-1">
-                                                <p class="text-gray-700 font-medium text-md">अध्यक्ष: श्री. केशवराव
-                                                    सर्जेराव
-                                                    जगताप</p>
-                                                <p class="text-gray-700 font-medium text-md">प्रमुख वक्ते: श्री.
-                                                    भैय्याजी जोशी</p>
-                                                <p class="text-gray-600 text-md">अतिथि: भा. ह. भ. प. बंडतात्या कराडकर
-                                                    महाराज</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-green-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">वैद्य श्री. चंदन मलजी घोटा,
-                                                        रतलाम</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-green-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्रीमती. नगीना मोहम्मद अन्वर
-                                                        खान,
-                                                        बारामुल्ला</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-green-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. प्रदीप दत्तात्रय मदने,
-                                                        फलटण</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2022 -->
-                            <div class="lg:pl-6 mb-8 lg:mb-10 relative lg:mt-6">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 right-6">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-md font-bold">22</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०२२ - नगर</h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-3 mb-3 border-l-4 border-blue-500">
-                                            <div class="space-y-1">
-                                                <p class="text-gray-700 font-medium text-md">प्रमुख वक्ते: मा. नाना जाधव
-                                                </p>
-                                                <p class="text-gray-600 text-md">प्रमुख अतिथी: मा. राधाकृष्ण विखेपाटील
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">सुयश चॅरिटेबल ट्रस्ट</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">डॉ. अजित रावळ</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. दिपक नरवडे</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">स्थानिक गोपालक</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2019 -->
-                            <div class="lg:pr-6 mb-8 lg:mb-10 relative">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 left-6">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-md font-bold">19</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०१९ - पुणे</h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-3 mb-3 border-l-4 border-orange-500">
-                                            <p class="text-gray-700 font-medium text-md">प्रमुख वक्ते: प.पू. सरसंघचालक
-                                                मा.
-                                                मोहनजी भागवत</p>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">गोसेवा परिवार, कोलकाता</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">वैद्या ज्योती मुंदरगी</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">वैद्य अजित उदावंत</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्याम अगरवाल</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2018 -->
-                            <div class="lg:pl-6 mb-8 lg:mb-10 relative lg:mt-6">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 right-6">
-                                        <div
-                                            class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-md font-bold">18</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०१८ - रांजणगाव
-                                            </h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-3 mb-3 border-l-4 border-purple-500">
-                                            <div class="space-y-1">
-                                                <p class="text-gray-700 font-medium text-md">प्रमुख वक्ते: मा. सुहासराव
-                                                    हिरेमठ</p>
-                                                <p class="text-gray-600 text-md">प्रमुख अतिथी: मा. कथुरिया, अध्यक्ष,
-                                                    कामधेनू
-                                                    आयोग</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. सुनिलजी मानसिंग का</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. पद्माकर चिंचोळे</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. सुरेंद्र देव</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">सौ. व श्री. सोहन उदय
-                                                        हजारे</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">हांगे बंधु</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">सौ. रुपाली श्रीकांत
-                                                        चव्हाण</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2015-2017 Combined -->
-                            <div class="lg:pr-6 mb-8 lg:mb-10 relative">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 left-6">
-                                        <div
-                                            class="w-12 h-8 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-sm font-bold">15-17</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-teal-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०१५-२०१७</h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-teal-50 to-green-50 rounded-lg p-3 mb-3 border-l-4 border-teal-500">
-                                            <p class="text-gray-700 font-medium text-md">सोलापूर, भोसरी पांजरापोळ, कुडुव
-                                                गाडी</p>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                उल्लेखनीय पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">डॉ. देविंदर सडाना, करनाल,
-                                                        हरयाना</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">डॉ. महेंद्र दारोकर</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">गो विज्ञान अनुसंधान
-                                                        संस्था</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">दिव्य ज्योती जागृती
-                                                        संस्थान</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">मारुती फुले पांडुरंग
-                                                        गोशाळा</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2010-2014 Combined -->
-                            <div class="lg:pl-6 mb-8 lg:mb-10 relative lg:mt-6">
-                                <div
-                                    class="bg-white rounded-lg p-5 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                                    <!-- Year Badge -->
-                                    <div class="absolute -top-4 right-6">
-                                        <div
-                                            class="w-12 h-8 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg shadow-sm flex items-center justify-center">
-                                            <span class="text-white text-sm font-bold">10-14</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="pt-4">
-                                        <div class="flex items-center mb-2">
-                                            <div class="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                                            <h3 class="text-lg font-bold text-gray-900 marathi-heading">२०१०-२०१४
-                                                (प्रारंभिक वर्षे)</h3>
-                                        </div>
-
-                                        <div
-                                            class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-3 mb-3 border-l-4 border-indigo-500">
-                                            <p class="text-gray-700 font-medium text-md">पुणे, कराड, नाशिक</p>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                                            <h4 class="font-bold text-gray-900 mb-2 flex items-center text-md">
-                                                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                                                संस्थापक पुरस्कारार्थी
-                                            </h4>
-                                            <ul class="space-y-2">
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">जनभारती न्यास, कोल्हापूर</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">वैद्या नंदिनी भोजराज,
-                                                        नागपूर</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">माधव गो-विज्ञान अनुसंधान
-                                                        संस्थान,
-                                                        भीलवाडा</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">प्रा. रामस्वरूप चौहान,
-                                                        पंतनगर</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-indigo-600 rounded-full mt-1.5 mr-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">अखिल भारतीय कृषी गो-सेवा
-                                                        संघ</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-600">50+</div>
+                            <div class="text-gray-600 mt-1">पुरस्कार विजेते</div>
                         </div>
                     </div>
-
-                    <!-- Summary Stats -->
-                    <div class="mt-12 relative">
-                        <div
-                            class="relative bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 text-white shadow-lg border border-green-500">
-                            <div class="text-center">
-                                <div class="flex items-center justify-center mb-4">
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                                    <div class="w-8 h-0.5 bg-yellow-400 mx-2"></div>
-                                    <h3 class="text-lg font-bold marathi-heading">पुरस्कार आकडेवारी</h3>
-                                    <div class="w-8 h-0.5 bg-yellow-400 mx-2"></div>
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <div class="group">
-                                        <div
-                                            class="bg-white/20 backdrop-blur-sm rounded-lg p-3 border border-white/30 hover:bg-white/30 transition-all duration-200 transform hover:scale-105">
-                                            <div
-                                                class="text-2xl font-bold text-amber-200 mb-1 group-hover:text-amber-100 transition-colors">
-                                                14</div>
-                                            <div class="text-green-100 font-medium text-md">वर्षे</div>
-                                            <div class="w-6 h-0.5 bg-amber-400 mx-auto mt-2 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <div class="group">
-                                        <div
-                                            class="bg-white/20 backdrop-blur-sm rounded-lg p-3 border border-white/30 hover:bg-white/30 transition-all duration-200 transform hover:scale-105">
-                                            <div
-                                                class="text-2xl font-bold text-amber-200 mb-1 group-hover:text-amber-100 transition-colors">
-                                                100+</div>
-                                            <div class="text-green-100 font-medium text-md">पुरस्कारार्थी</div>
-                                            <div class="w-6 h-0.5 bg-amber-400 mx-auto mt-2 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <div class="group">
-                                        <div
-                                            class="bg-white/20 backdrop-blur-sm rounded-lg p-3 border border-white/30 hover:bg-white/30 transition-all duration-200 transform hover:scale-105">
-                                            <div
-                                                class="text-2xl font-bold text-amber-200 mb-1 group-hover:text-amber-100 transition-colors">
-                                                10+</div>
-                                            <div class="text-green-100 font-medium text-md">शहरे</div>
-                                            <div class="w-6 h-0.5 bg-amber-400 mx-auto mt-2 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Decorative elements -->
-                                <div
-                                    class="absolute top-2 left-2 w-3 h-3 border-2 border-yellow-400 rounded-full opacity-60">
-                                </div>
-                                <div class="absolute top-3 right-3 w-2 h-2 bg-orange-400 rounded-full opacity-40"></div>
-                                <div class="absolute bottom-2 left-3 w-2 h-2 bg-yellow-300 rounded-full opacity-50">
-                                </div>
-                                <div
-                                    class="absolute bottom-2 right-2 w-2 h-2 border-2 border-orange-400 rounded-full opacity-70">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="awards.html"
+                        class="inline-flex items-center bg-orange-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors duration-200">
+                        <span>पुरस्कारांची माहिती पहा</span>
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- Team Preview Section -->
         <section class="py-16 lg:py-20 bg-white">
             <div class="container mx-auto px-4 sm:px-6">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-green-700 font-semibold text-md uppercase tracking-wider">टीम</span>
+                        <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">आमची टीम</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">आमची टीम
+                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">
+                        समर्पित कार्यकर्ते
                     </h2>
-                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4"></div>
-                    <p class="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
-                        अनुभवी विश्वस्त आणि कुशल कार्यकारी टीम - एकत्रित प्रयत्नांनी गोसेवा आणि संशोधनाचे कार्य
-                    </p>
+                    <div class="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
                 </div>
 
-                <div class="max-w-7xl mx-auto">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                        <!-- Trustees Card -->
-                        <div
-                            class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div
-                                        class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="text-xl font-bold marathi-heading primary-green mb-3">संस्थेचे विश्वस्त
-                                    </h3>
-                                    <div
-                                        class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border-l-4 border-green-500 mb-3">
-                                        <p class="text-green-700 font-medium text-md">संस्थेचे मार्गदर्शन आणि
-                                            निर्णयक्षमता</p>
-                                    </div>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. राजेंद्र लुंकड</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. बापूराव कुलकर्णी</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. अनिल व्यास</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. चिंतामणी चितळे</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. प्रमोद कुलकर्णी</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. हेमंत दांडेगावकर</span>
-                                        </div>
-                                        <div class="flex items-start space-x-2 sm:col-span-2">
-                                            <div class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                            <span class="text-gray-700 text-md">श्री. सतीश पारखी</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-10">
+                    <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                            </svg>
                         </div>
-
-                        <!-- Executive Team Card -->
-                        <div
-                            class="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0">
-                                    <div
-                                        class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg shadow-sm flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="text-xl font-bold marathi-heading primary-green mb-3">कार्यकारी टीम</h3>
-                                    <div class="space-y-4">
-                                        <div>
-                                            <div
-                                                class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg p-3 border-l-4 border-orange-500 mb-3">
-                                                <h4 class="font-semibold text-orange-700 text-md flex items-center">
-                                                    <svg class="w-4 h-4 text-orange-500 mr-2" fill="currentColor"
-                                                        viewBox="0 0 20 20">
-                                                        <path
-                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                    </svg>
-                                                    टास्क फोर्स टीम - 100 स्वयंसेवक
-                                                </h4>
-                                            </div>
-                                            <div class="space-y-1 ml-2">
-                                                <div class="flex items-start space-x-2">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-gray-700 text-md">डॉ. प्रसाद खंडागळे</span>
-                                                        <p
-                                                            class="text-gray-600 text-sm mt-1 group-hover:text-gray-800 transition-colors">
-                                                            <span
-                                                                class="cursor-help text-blue-600 underline hover:text-blue-800"
-                                                                title="देशी गाय: मानेखाली पोळी आणि वशिंड असलेली">देशी
-                                                                गाय</span> व देशी गायीच्या पंचगव्य आधारित संशोधन
-                                                            <span class="inline-block ml-1 cursor-help"
-                                                                title="देशी गाय: मानेखाली पोळी आणि वशिंड असलेली">
-                                                                <svg class="w-4 h-4 text-gray-500 hover:text-gray-700 transition-colors"
-                                                                    fill="currentColor" viewBox="0 0 20 20">
-                                                                    <path fill-rule="evenodd"
-                                                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                                                                        clip-rule="evenodd" />
-                                                                </svg>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-start space-x-2">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. कल्याण कुलकर्णी</span>
-                                                </div>
-                                                <div class="flex items-start space-x-2">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">श्री. प्रशांत करमरकर</span>
-                                                </div>
-                                                <div class="flex items-start space-x-2">
-                                                    <div
-                                                        class="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 flex-shrink-0">
-                                                    </div>
-                                                    <span class="text-gray-700 text-md">इतर सदस्य...</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div
-                                                class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 border-l-4 border-blue-500">
-                                                <h4 class="font-semibold text-blue-700 text-md flex items-center">
-                                                    <svg class="w-4 h-4 text-blue-500 mr-2" fill="currentColor"
-                                                        viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd"
-                                                            d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                    संशोधक टीम - 8 डॉक्टर + 10 विद्यार्थी
-                                                </h4>
-                                                <p class="text-blue-600 text-sm mt-1">नेतृत्व: डॉ. प्रसाद खंडागळे</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="text-3xl font-bold text-green-600 mb-2">7</div>
+                        <div class="text-gray-700 font-medium">विश्वस्त</div>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full mx-auto flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                            </svg>
                         </div>
+                        <div class="text-3xl font-bold text-orange-600 mb-2">100+</div>
+                        <div class="text-gray-700 font-medium">कार्यकर्ते</div>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-blue-600 mb-2">8+</div>
+                        <div class="text-gray-700 font-medium">डॉक्टर संशोधक</div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="team.html"
+                        class="inline-flex items-center border-2 border-green-600 text-green-600 font-semibold py-3 px-8 rounded-lg hover:bg-green-600 hover:text-white transition-all duration-200">
+                        <span>टीम पहा</span>
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-gradient-to-r from-green-600 to-green-700">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading mb-6">आमच्या मिशनमध्ये सामील व्हा</h2>
+                    <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+                        गोसेवा आणि पंचगव्य आधारित जीवनशैलीच्या प्रसारात आमच्यासोबत हात मिळवा. स्वयंसेवक म्हणून सामील व्हा किंवा संपर्क साधा.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="contact.html"
+                            class="inline-flex items-center justify-center bg-white text-green-700 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                            <span>संपर्क करा</span>
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="gallery.html"
+                            class="inline-flex items-center justify-center border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-green-700 transition-colors duration-200">
+                            गॅलरी पहा
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1584,185 +495,73 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="min-h-[25vh] primary-green-bg text-white flex items-center py-6">
-        <div class="container mx-auto px-4 sm:px-6 w-full">
-            <div class="flex flex-col justify-center space-y-6">
-                <!-- Section Header -->
-                <div class="text-center">
-                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-3">
-                        <span class="text-white font-semibold text-sm uppercase tracking-wider">संपर्क साधा</span>
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-bold marathi-heading text-white mb-3 leading-tight">Contact Us
-                    </h2>
-                    <div class="w-16 h-0.5 bg-orange-400 mx-auto rounded-full"></div>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="flex-1 flex items-center justify-center">
-                    <div class="max-w-5xl mx-auto w-full">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                            <!-- Address -->
-                            <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 bg-orange-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-orange-400/30 shadow-lg">
-                                    <svg class="w-6 h-6 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-md font-bold marathi-heading text-white mb-2">मुख्यालय</h3>
-                                <div class="text-green-100 text-sm leading-relaxed space-y-1">
-                                    <p class="font-medium">अ/३, विष्णुकृपा सोसायटी</p>
-                                    <p>नवा विष्णू चौक, बाजीराव रोड</p>
-                                    <p class="text-orange-200 font-semibold">पुणे - ४११००२, महाराष्ट्र</p>
-                                    <p class="font-medium">श्री. अनिल व्यास</p>
-                                </div>
-                            </div>
-
-                            <!-- Contact -->
-                            <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 bg-green-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-green-400/30 shadow-lg">
-                                    <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-md font-bold marathi-heading text-white mb-2">संपर्क व्यक्ती</h3>
-                                <div class="space-y-2">
-                                    <div class="text-green-100 text-sm">
-                                        <p class="font-medium">श्री सतीश पारखी</p>
-                                    </div>
-                                    <a href="tel:+918888871310"
-                                        class="inline-flex items-center text-white bg-green-500/20 px-3 py-1.5 rounded-full text-sm hover:bg-green-500/30 transition-all duration-200 border border-green-400/30">
-                                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                        </svg>
-                                        +91 88888 71310
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 bg-blue-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-blue-400/30 shadow-lg">
-                                    <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-md font-bold marathi-heading text-white mb-2">ईमेल संपर्क</h3>
-                                <div class="space-y-2">
-                                    <p class="text-green-100 text-sm">व्यावसायिक संपर्कासाठी</p>
-                                    <a href="mailto:govidnyan.ss@gmail.com"
-                                        class="inline-flex items-center text-white bg-blue-500/20 px-3 py-1.5 rounded-full text-sm hover:bg-blue-500/30 transition-all duration-200 border border-blue-400/30">
-                                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                        </svg>
-                                        govidnyan.ss@gmail.com
-                                    </a>
-                                </div>
-                            </div>
+    <footer class="primary-green-bg text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & About -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
+                        <div>
+                            <span class="text-xl font-bold marathi-heading block">गो विज्ञान संशोधन संस्था</span>
+                            <span class="text-green-200 text-sm">Go Vidnyan Sanshodhan Sanstha</span>
                         </div>
                     </div>
+                    <p class="text-green-100 max-w-md">
+                        भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित संस्था. २००२ पासून निरंतर सेवारत.
+                    </p>
                 </div>
 
-                <!-- Footer Bottom -->
-                <div class="border-t border-white/20 pt-4 mt-2">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-3">
-                        <div class="flex items-center space-x-3">
-                            <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-8">
-                            <div class="text-left">
-                                <span class="text-md font-bold marathi-heading text-white block leading-tight">गो
-                                    विज्ञान संशोधन संस्था</span>
-                                <span class="text-sm text-green-200 font-medium">Go Vidnyan Sanshodhan Sanstha</span>
-                            </div>
-                        </div>
-                        <div class="text-center md:text-right">
-                            <p class="text-green-200 text-sm font-medium">&copy; २०२५ गो विज्ञान संशोधन संस्था. सर्व
-                                हक्क राखीव.</p>
-                            <p class="text-orange-200 text-sm font-semibold mt-1">२००२ पासून निरंतर सेवारत •</p>
-                        </div>
-                    </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">त्वरित लिंक्स</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-green-200 hover:text-white transition-colors">आमच्याबद्दल</a></li>
+                        <li><a href="projects.html" class="text-green-200 hover:text-white transition-colors">प्रकल्प</a></li>
+                        <li><a href="awards.html" class="text-green-200 hover:text-white transition-colors">पुरस्कार</a></li>
+                        <li><a href="team.html" class="text-green-200 hover:text-white transition-colors">टीम</a></li>
+                        <li><a href="gallery.html" class="text-green-200 hover:text-white transition-colors">गॅलरी</a></li>
+                    </ul>
                 </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">संपर्क</h3>
+                    <ul class="space-y-2 text-green-200">
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>पुणे - ४११००२</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span>+91 88888 71310</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span>govidnyan.ss@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-green-500 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-green-200 text-sm">&copy; २०२५ गो विज्ञान संशोधन संस्था. सर्व हक्क राखीव.</p>
+                <p class="text-orange-200 text-sm font-semibold">२००२ पासून निरंतर सेवारत</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                }
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuButton = document.getElementById('mobile-menu-button');
-
-            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        // Active navigation based on scroll position
-        function updateActiveNav() {
-            const sections = ['about', 'projects', 'awards'];
-            const navLinks = {
-                'about': document.querySelector('a[href="#about"]'),
-                'projects': document.querySelector('a[href="#projects"]'),
-                'awards': document.querySelector('a[href="#awards"]')
-            };
-
-            // Remove active class from all nav links
-            Object.values(navLinks).forEach(link => {
-                if (link) link.classList.remove('nav-active');
-            });
-
-            // Find which section is currently in view
-            let currentSection = '';
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    // If section is in viewport (with some offset for better UX)
-                    if (rect.top <= 150 && rect.bottom >= 150) {
-                        currentSection = sectionId;
-                    }
-                }
-            });
-
-            // Add active class to current section's nav link
-            if (currentSection && navLinks[currentSection]) {
-                navLinks[currentSection].classList.add('nav-active');
-            }
-        }
-
-        // Update active navigation on scroll and page load
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('load', updateActiveNav);
     </script>
 
 </body>
