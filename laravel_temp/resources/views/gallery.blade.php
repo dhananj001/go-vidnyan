@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गॅलरी | गो विज्ञान संशोधन संस्था</title>
+    <link rel="icon" type="image/png" href="images/go-vidnyan-favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Minimalist UI/UX styles */
+        :root {
+            --primary-green: #16a34a;
+            --accent-orange: #ea580c;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --background: #ffffff;
+            --light-gray: #f9fafb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .marathi-heading {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        .primary-green {
+            color: var(--primary-green);
+        }
+
+        .primary-green-bg {
+            background-color: var(--primary-green);
+        }
+
+        .accent-orange {
+            color: var(--accent-orange);
+        }
+
+        .accent-orange-bg {
+            background-color: var(--accent-orange);
+        }
+
+        /* Minimal transitions */
+        .smooth-transition {
+            transition: all 0.2s ease;
+        }
+
+        /* Tab styles - Subtle Green Glassmorphism */
+        .tab-button {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            background-color: rgba(34, 197, 94, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            z-index: 1;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.08);
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            color: rgba(22, 163, 74, 0.8);
+        }
+
+        .tab-button.active {
+            background-color: rgba(34, 197, 94, 0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: rgba(22, 163, 74, 0.9);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.12);
+        }
+
+        .tab-button:hover {
+            background-color: rgba(34, 197, 94, 0.12);
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            color: rgba(22, 163, 74, 0.85);
+            box-shadow: 0 5px 18px rgba(34, 197, 94, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Tab container */
+        .tab-container {
+            position: relative;
+        }
+
+        /* Custom scrollbar for tab container */
+        .tab-container::-webkit-scrollbar {
+            height: 2px;
+        }
+
+        .tab-container::-webkit-scrollbar-track {
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 2px;
+        }
+
+        .tab-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .tab-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(90deg, var(--accent-orange), var(--primary-green));
+        }
+
+        /* Gallery specific styles */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Masonry layout */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+
+        /* Reduce gap between images on mobile */
+        @media (max-width: 767px) {
+            .masonry-item {
+                margin-bottom: 0.25rem;
+            }
+
+            .masonry-grid {
+                column-gap: 0.25rem !important;
+            }
+        }
+
+        /* Lightbox styles */
+        #lightbox-modal {
+            backdrop-filter: blur(2px);
+        }
+
+        #lightbox-image {
+            transition: transform 0.3s ease;
+            user-select: none;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        #lightbox-image.zoomed {
+            cursor: zoom-out;
+            max-width: none;
+            max-height: none;
+        }
+
+        #lightbox-image:not(.zoomed) {
+            cursor: zoom-in;
+        }
+
+        /* Mobile adjustments for lightbox */
+        @media (max-width: 768px) {
+            #lightbox-image {
+                max-width: 95vw;
+                max-height: 80vh;
+            }
+
+            #lightbox-prev,
+            #lightbox-next {
+                display: none;
+            }
+        }
+
+        /* Hide scrollbars when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* Active navigation styles */
+        .nav-active {
+            background-color: rgba(22, 163, 74, 0.1);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .nav-active:hover {
+            background-color: rgba(22, 163, 74, 0.15);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown button styles (for Projects when on project pages) */
+        .dropdown-btn-active {
+            background-color: rgba(22, 163, 74, 0.08);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .dropdown-btn-active:hover {
+            background-color: rgba(22, 163, 74, 0.12);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown item styles */
+        .dropdown-active {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+
+        .dropdown-active:hover {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 rounded-b-2xl">
+        <nav class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                    <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
+                    <div>
+                        <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
+                        <p class="text-sm text-gray-500 font-medium">Go Vidnyan Sanshodhan Sanstha</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
+                    <a href="index.html#about"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
+
+                    <!-- Projects Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200 flex items-center space-x-1">
+                            <span>Projects</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="lectures.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-green-500">📅</span>
+                                    <div>
+                                        <div class="font-medium">Weekly Lectures</div>
+                                        <div class="text-xs text-gray-500">साप्ताहिक व्याख्याने</div>
+                                    </div>
+                                </a>
+                                <a href="research.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-orange-500">🔬</span>
+                                    <div>
+                                        <div class="font-medium">Research Work</div>
+                                        <div class="text-xs text-gray-500">संशोधन कार्य</div>
+                                    </div>
+                                </a>
+                                <a href="nirmalya.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-blue-500">♻️</span>
+                                    <div>
+                                        <div class="font-medium">Nirmalya Project</div>
+                                        <div class="text-xs text-gray-500">निर्माल्य प्रकल्प</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#awards"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
+                    <a href="#gallery"
+                        class="nav-active text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
+                    <a href="query.html"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Query</a>
+                    <a href="index.html#contact"
+                        class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 hover:bg-gray-100 rounded-lg smooth-transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
+                <a href="index.html"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Home</a>
+                <a href="index.html#about"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">About</a>
+                <a href="index.html#projects"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Work</a>
+                <a href="index.html#awards"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Awards</a>
+                <a href="#gallery"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Gallery</a>
+                <a href="query.html"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Query</a>
+                <!-- Project Pages -->
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
+                    <a href="lectures.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-green-50 rounded smooth-transition">📅 साप्ताहिक
+                        व्याख्याने</a>
+                    <a href="research.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-orange-50 rounded smooth-transition">🔬 संशोधन
+                        कार्य</a>
+                    <a href="nirmalya.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-blue-50 rounded smooth-transition">♻️ निर्माल्य
+                        प्रकल्प</a>
+                </div>
+                <a href="index.html#contact"
+                    class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Gallery Hero Section -->
+        <section class="bg-gradient-to-br from-green-50 via-white to-green-100 py-8 rounded-t-2xl">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-6">
+                        <span class="text-green-700 font-semibold text-md uppercase tracking-wider">गॅलरी</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-6 leading-tight">
+                        संस्थेच्या कार्याचे दृश्य
+                    </h1>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6"></div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        गो विज्ञान संशोधन संस्थेच्या विविध प्रकल्पांचे, कार्यक्रमांचे आणि उपक्रमांचे छायाचित्र आणि
+                        व्हिडिओ संग्रह
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Tabs and Content -->
+        <section id="gallery" class="py-16 lg:py-12 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
+                <!-- Tab Navigation -->
+                <div class="flex justify-center mb-12">
+                    <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 p-2 md:p-3 rounded-2xl shadow-sm border border-emerald-100/50 tab-container overflow-x-auto md:overflow-visible"
+                        style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
+                        <div
+                            class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:whitespace-normal justify-center min-w-max md:min-w-0">
+                            <button
+                                class="tab-button active px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('all')">
+                                सर्व छायाचित्रे
+                            </button>
+                            <button
+                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('projects')">
+                                प्रकल्प
+                            </button>
+                            <button
+                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('cows')">
+                                गायींचे संवर्धन
+                            </button>
+                            <button
+                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('certificates')">
+                                प्रमाणपत्रे
+                            </button>
+                            <button
+                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('agriculture')">
+                                कृषी संबंधित
+                            </button>
+                            <button
+                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
+                                onclick="showTab('nirmalya')">
+                                निर्माल्य प्रकल्प
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="masonry-grid gap-6" id="gallery-grid">
+                    <!-- All Images (shown by default) -->
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/2011photo.png" alt="2011 संस्थेचे कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०११</h3>
+                                    <p class="text-sm opacity-90">संस्थेचे प्रारंभिक कार्य</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/2012photo.png" alt="2012 संस्थेचे कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१२</h3>
+                                    <p class="text-sm opacity-90">विकासाचे वर्ष</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/2019photo001.png" alt="2019 प्रकल्प कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">शेती विकास कार्य</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/2019photo002.png" alt="2019 संस्था कार्यक्रम" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ कार्यक्रम</h3>
+                                    <p class="text-sm opacity-90">संस्था उपक्रम</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/2019photo003.png" alt="2019 शेती प्रकल्प" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ शेती</h3>
+                                    <p class="text-sm opacity-90">कृषी विकास</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/cbof001.png" alt="CBOF प्रकल्प" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">CBOF प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">गो-आधारित शेती</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/cbof002.png" alt="CBOF प्रकल्प कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">CBOF प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">कार्य प्रक्रिया</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all cows">
+                        <div class="relative">
+                            <img src="images/indiancow.png" alt="भारतीय गाय" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">भारतीय गाय</h3>
+                                    <p class="text-sm opacity-90">देशी गायींचे संवर्धन</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all cows">
+                        <div class="relative">
+                            <img src="images/indiancow002.png" alt="भारतीय गाय" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">भारतीय गाय</h3>
+                                    <p class="text-sm opacity-90">गोपालन</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all cows">
+                        <div class="relative">
+                            <img src="images/Indiancowlist.png" alt="गायींची यादी" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">गायींची यादी</h3>
+                                    <p class="text-sm opacity-90">गोदान कार्यक्रम</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all projects">
+                        <div class="relative">
+                            <img src="images/research.png" alt="संशोधन कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">संशोधन</h3>
+                                    <p class="text-sm opacity-90">पंचगव्य संशोधन</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all certificates">
+                        <div class="relative">
+                            <img src="images/Legalcertificate001.png" alt="कायदेशीर प्रमाणपत्र"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">प्रमाणपत्र</h3>
+                                    <p class="text-sm opacity-90">कायदेशीर मान्यता</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all certificates">
+                        <div class="relative">
+                            <img src="images/LegalCertifacate002.png" alt="कायदेशीर प्रमाणपत्र"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">प्रमाणपत्र</h3>
+                                    <p class="text-sm opacity-90">संस्था नोंदणी</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190708_182613220.jpg" alt="कृषी प्रकल्प कार्य"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">गोमूत्र आणि गोमय वापर</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190708_182640906_BURST000_COVER_TOP.jpg"
+                                alt="नैसर्गिक शेती" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">नैसर्गिक शेती</h3>
+                                    <p class="text-sm opacity-90">गो-आधारित कृषी पद्धती</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190708_182653508.jpg" alt="शेती उपक्रम"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">शेती उपक्रम</h3>
+                                    <p class="text-sm opacity-90">गो विज्ञानाचे कृषी अनुप्रयोग</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190708_183938709_HDR.jpg" alt="कृषी विकास"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी विकास</h3>
+                                    <p class="text-sm opacity-90">नवीन कृषी तंत्रज्ञान</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190708_192025711.jpg" alt="गोमूत्र खत"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">गोमूत्र खत</h3>
+                                    <p class="text-sm opacity-90">गोमूत्र खत विषयी चर्चा</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190731_081702943.jpg" alt="शेती प्रयोग"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">शेती प्रयोग</h3>
+                                    <p class="text-sm opacity-90">गो विज्ञान प्रयोगशाळा</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all agriculture">
+                        <div class="relative">
+                            <img src="images/agriculturerelated/IMG_20190731_081823616_HDR.jpg" alt="कृषी संशोधन"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी संशोधन</h3>
+                                    <p class="text-sm opacity-90">विज्ञान आधारित कृषी</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all nirmalya">
+                        <div class="relative">
+                            <img src="images/nirmalyprojectrelated/IMG_20180912_111128196.jpg"
+                                alt="निर्माल्य प्रकल्प कार्य" class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">समाजात जागरूकता कटआउट चिकटवणे</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all nirmalya">
+                        <div class="relative">
+                            <img src="images/nirmalyprojectrelated/IMG_20180912_112122499.jpg" alt="निर्माल्य संवर्धन"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य संवर्धन</h3>
+                                    <p class="text-sm opacity-90">समाज भेट आणि जागरूकता प्रसार</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all nirmalya">
+                        <div class="relative">
+                            <img src="images/nirmalyprojectrelated/IMG_20180912_112740343.jpg" alt="गणेशोत्सव निर्माल्य"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">गणेशोत्सव निर्माल्य</h3>
+                                    <p class="text-sm opacity-90">कटआउटद्वारे जनजागृती</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all nirmalya">
+                        <div class="relative">
+                            <img src="images/nirmalyprojectrelated/IMG_20180912_113354474.jpg" alt="निर्माल्य पुनर्वापर"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य पुनर्वापर</h3>
+                                    <p class="text-sm opacity-90">समाजात जागरूकता अभियान</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+                        data-category="all nirmalya">
+                        <div class="relative">
+                            <img src="images/nirmalyprojectrelated/IMG_20180912_113406929.jpg" alt="पर्यावरण प्रकल्प"
+                                class="w-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">पर्यावरण प्रकल्प</h3>
+                                    <p class="text-sm opacity-90">निर्माल्य जागरूकता कटआउट</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
+                    <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center">
+                        <!-- Close Button -->
+                        <button id="lightbox-close"
+                            class="absolute top-4 right-4 z-60 bg-black/50 hover:bg-black/70 text-white hover:text-gray-300 transition-colors rounded-full p-2 shadow-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+
+                        <!-- Previous Button -->
+                        <button id="lightbox-prev"
+                            class="absolute left-4 top-1/2 transform -translate-y-1/2 z-60 text-white hover:text-gray-300 transition-colors opacity-75 hover:opacity-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button id="lightbox-next"
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 z-60 text-white hover:text-gray-300 transition-colors opacity-75 hover:opacity-100">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <!-- Image Container -->
+                        <div class="relative max-w-4xl max-h-full p-4">
+                            <img id="lightbox-image" src="" alt=""
+                                class="max-w-full max-h-full object-contain cursor-zoom-in"
+                                style="transform-origin: center;">
+                        </div>
+
+                        <!-- Image Info -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center">
+                            <div id="lightbox-caption" class="bg-black bg-opacity-50 px-4 py-2 rounded-lg text-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videos Section -->
+                <div class="mt-16">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">व्हिडिओ संग्रह
+                        </h2>
+                        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+                        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">व्हिडिओ सामग्री लवकरच उपलब्ध होणार आहे</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Video Placeholder 1 -->
+                        <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
+                            style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
+                            <div class="mb-4">
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/PTvFbuL2yWw"
+                                    title="पंचगव्य चिकित्सा प्रक्रिया" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen class="rounded-xl"></iframe>
+                            </div>
+                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">पंचगव्य चिकित्सा प्रक्रिया
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">पंचगव्य चिकित्सेच्या विविध पद्धती आणि
+                                त्याचे आरोग्य फायदे</p>
+                        </div>
+
+                        <!-- Video Placeholder 2 -->
+                        <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
+                            style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
+                            <div class="mb-4">
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/xWFvlfrrmro"
+                                    title="गो-आधारित शेती तंत्र" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen class="rounded-xl"></iframe>
+                            </div>
+                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">गो-आधारित शेती तंत्र</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">गोमूत्र आणि गोमय वापरून नैसर्गिक शेती
+                                करण्याचे मार्ग</p>
+                        </div>
+
+                        <!-- Video Placeholder 3 -->
+                        <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
+                            style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
+                            <div class="mb-4">
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/3r8ul0PNWy4"
+                                    title="संस्थेचे कार्य परिचय" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen class="rounded-xl"></iframe>
+                            </div>
+                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">संस्थेचे कार्य परिचय
+                            </h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">गो विज्ञान संशोधन संस्थेच्या कार्याचे
+                                संपूर्ण परिचय</p>
+                        </div>
+                    </div> <!-- Call to Action -->
+                    <div
+                        class="text-center mt-16 bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold marathi-heading mb-4">आमच्या कार्यात सहभागी व्हा</h3>
+                        <p class="text-green-100 mb-6">गो विज्ञान संशोधन संस्थेच्या कार्याला पाठिंबा द्या आणि गोसेवेत
+                            सहभागी व्हा</p>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center bg-white text-green-700 font-semibold py-3 px-8 rounded-lg smooth-transition hover:bg-gray-50 shadow-lg">
+                            <span>संपर्क करा</span>
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="min-h-[25vh] primary-green-bg text-white flex items-center py-6">
+        <div class="container mx-auto px-4 sm:px-6 w-full">
+            <div class="flex flex-col justify-center space-y-6">
+                <!-- Section Header -->
+                <div class="text-center">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-3">
+                        <span class="text-white font-semibold text-sm uppercase tracking-wider">संपर्क साधा</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold marathi-heading text-white mb-3 leading-tight">Contact Us
+                    </h2>
+                    <div class="w-16 h-0.5 bg-orange-400 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="flex-1 flex items-center justify-center">
+                    <div class="max-w-5xl mx-auto w-full">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <!-- Address -->
+                            <div class="space-y-3">
+                                <div
+                                    class="w-12 h-12 bg-orange-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-orange-400/30 shadow-lg">
+                                    <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-md font-bold marathi-heading text-white mb-2">मुख्यालय</h3>
+                                <div class="text-green-100 text-sm leading-relaxed space-y-1">
+                                    <p class="font-medium">अ/३, विष्णुकृपा सोसायटी</p>
+                                    <p>नवा विष्णू चौक, बाजीराव रोड</p>
+                                    <p class="text-orange-200 font-semibold">पुणे - ४११००२, महाराष्ट्र</p>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="space-y-3">
+                                <div
+                                    class="w-12 h-12 bg-green-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-green-400/30 shadow-lg">
+                                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-md font-bold marathi-heading text-white mb-2">संपर्क व्यक्ती</h3>
+                                <div class="space-y-2">
+                                    <div class="text-green-100 text-sm">
+                                        <p class="font-medium">श्री. ज्ञानेश्वर साठे</p>
+                                        <p>संचालक</p>
+                                    </div>
+                                    <a href="tel:+918888871310"
+                                        class="inline-flex items-center text-orange-200 hover:text-white smooth-transition">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                            </path>
+                                        </svg>
+                                        <span>+91 8888871310</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="space-y-3">
+                                <div
+                                    class="w-12 h-12 bg-blue-400/20 backdrop-blur-sm rounded-xl mx-auto flex items-center justify-center border border-blue-400/30 shadow-lg">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-md font-bold marathi-heading text-white mb-2">ईमेल संपर्क</h3>
+                                <div class="space-y-2">
+                                    <p class="text-green-100 text-sm">व्यावसायिक संपर्कासाठी</p>
+                                    <a href="mailto:info@govidnyan-pune.org"
+                                        class="inline-flex items-center text-orange-200 hover:text-white smooth-transition">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <span>info@govidnyan-pune.org</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="border-t border-white/20 pt-4 mt-2">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-8">
+                            <div class="text-left">
+                                <span class="text-md font-bold marathi-heading text-white block leading-tight">गो
+                                    विज्ञान संशोधन संस्था</span>
+                                <span class="text-sm text-green-200 font-medium">Go Vidnyan Sanshodhan Sanstha</span>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <p class="text-green-200 text-sm font-medium">&copy; २०२५ गो विज्ञान संशोधन संस्था. सर्व
+                                हक्क राखीव.</p>
+                            <p class="text-orange-200 text-sm font-semibold mt-1">२००२ पासून निरंतर सेवारत •</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+
+            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Gallery tab functionality
+        function showTab(category) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter gallery items
+            const items = document.querySelectorAll('.masonry-item');
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category.includes(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        let galleryImages = [];
+        let isZoomed = false;
+        let scale = 1;
+        let initialDistance = 0;
+        let lastScale = 1;
+
+        // Touch handling for mobile swipe
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+        const minSwipeDistance = 50;
+
+        // Handle keyboard navigation
+        function handleKeydown(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                showPrev();
+            } else if (event.key === 'ArrowRight') {
+                showNext();
+            }
+        }
+
+        // Initialize lightbox
+        function initLightbox() {
+            galleryImages = Array.from(document.querySelectorAll('.gallery-item'));
+
+            // Add click event to all gallery items
+            galleryImages.forEach((item, index) => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => openLightbox(index));
+            });
+        }
+
+        // Open lightbox
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const caption = document.getElementById('lightbox-caption');
+
+            const currentItem = galleryImages[currentImageIndex];
+            const currentImg = currentItem.querySelector('img');
+            lightboxImage.src = currentImg.src;
+            lightboxImage.alt = currentImg.alt;
+
+            // Get caption from overlay
+            const overlay = currentItem.querySelector('.gallery-overlay');
+            if (overlay) {
+                const title = overlay.querySelector('h3')?.textContent || '';
+                const desc = overlay.querySelector('p')?.textContent || '';
+                caption.textContent = title + (title && desc ? ' - ' : '') + desc;
+            }
+
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+
+            // Reset zoom
+            resetZoom();
+
+            // Add keyboard event listeners
+            document.addEventListener('keydown', handleKeydown);
+
+            // Add touch event listeners for mobile swipe
+            const container = document.getElementById('lightbox-container');
+            container.addEventListener('touchstart', handleTouchStart, { passive: true });
+            container.addEventListener('touchend', handleTouchEnd, { passive: true });
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+            document.removeEventListener('keydown', handleKeydown);
+
+            // Remove touch event listeners
+            const container = document.getElementById('lightbox-container');
+            container.removeEventListener('touchstart', handleTouchStart);
+            container.removeEventListener('touchend', handleTouchEnd);
+
+            resetZoom();
+        }
+
+        // Reset zoom state
+        function resetZoom() {
+            const lightboxImage = document.getElementById('lightbox-image');
+            isZoomed = false;
+            scale = 1;
+            lightboxImage.style.transform = 'scale(1)';
+            lightboxImage.classList.remove('zoomed');
+            lastScale = 1;
+        }
+
+        // Show next image
+        function showNext() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Show previous image
+        function showPrev() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Update lightbox image
+        function updateLightboxImage() {
+            const lightboxImage = document.getElementById('lightbox-image');
+            const caption = document.getElementById('lightbox-caption');
+
+            const currentItem = galleryImages[currentImageIndex];
+            const currentImg = currentItem.querySelector('img');
+            lightboxImage.src = currentImg.src;
+            lightboxImage.alt = currentImg.alt;
+
+            // Get caption from overlay
+            const overlay = currentItem.querySelector('.gallery-overlay');
+            if (overlay) {
+                const title = overlay.querySelector('h3')?.textContent || '';
+                const desc = overlay.querySelector('p')?.textContent || '';
+                caption.textContent = title + (title && desc ? ' - ' : '') + desc;
+            }
+
+            resetZoom();
+        }
+
+        // Handle zoom
+        function handleZoom(event) {
+            const lightboxImage = document.getElementById('lightbox-image');
+
+            if (event.type === 'click') {
+                // Toggle zoom on click
+                if (!isZoomed) {
+                    scale = 2;
+                    isZoomed = true;
+                    lightboxImage.classList.add('zoomed');
+                } else {
+                    scale = 1;
+                    isZoomed = false;
+                    lightboxImage.classList.remove('zoomed');
+                }
+            } else if (event.type === 'wheel') {
+                // Zoom with mouse wheel
+                event.preventDefault();
+                const delta = event.deltaY > 0 ? -0.1 : 0.1;
+                scale = Math.max(0.5, Math.min(3, scale + delta));
+                isZoomed = scale > 1;
+                lightboxImage.classList.toggle('zoomed', isZoomed);
+            }
+
+            lightboxImage.style.transform = `scale(${scale})`;
+        }
+
+        // Handle touch start
+        function handleTouchStart(event) {
+            touchStartX = event.touches[0].clientX;
+            touchStartY = event.touches[0].clientY;
+        }
+
+        // Handle touch end
+        function handleTouchEnd(event) {
+            touchEndX = event.changedTouches[0].clientX;
+            touchEndY = event.changedTouches[0].clientY;
+            handleSwipe();
+        }
+
+        // Handle swipe gesture
+        function handleSwipe() {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            const absDeltaX = Math.abs(deltaX);
+            const absDeltaY = Math.abs(deltaY);
+
+            // Only handle horizontal swipes that are longer than vertical movement
+            if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
+                if (deltaX > 0) {
+                    // Swipe right - previous image
+                    showPrev();
+                } else {
+                    // Swipe left - next image
+                    showNext();
+                }
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            initLightbox();
+        });
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+        document.getElementById('lightbox-next').addEventListener('click', showNext);
+
+        // Click outside to close
+        document.getElementById('lightbox-container').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox-container') {
+                closeLightbox();
+            }
+        });
+
+        // Image zoom functionality
+        document.getElementById('lightbox-image').addEventListener('click', handleZoom);
+        document.getElementById('lightbox-image').addEventListener('wheel', handleZoom);
+    </script>
+
+</body>
+
+</html>

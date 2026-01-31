@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रश्न पाठवा | गो विज्ञान संशोधन संस्था</title>
+    <link rel="icon" type="image/png" href="images/go-vidnyan-favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Minimalist UI/UX styles */
+        :root {
+            --primary-green: #16a34a;
+            --accent-orange: #ea580c;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --background: #ffffff;
+            --light-gray: #f9fafb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .marathi-heading {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        .primary-green {
+            color: var(--primary-green);
+        }
+
+        .primary-green-bg {
+            background-color: var(--primary-green);
+        }
+
+        .accent-orange {
+            color: var(--accent-orange);
+        }
+
+        .accent-orange-bg {
+            background-color: var(--accent-orange);
+        }
+
+        /* Minimal transitions */
+        .smooth-transition {
+            transition: all 0.2s ease;
+        }
+
+        .card-minimal {
+            border: 1px solid #e5e7eb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-minimal:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
+        }
+
+        /* Form styles */
+        .form-input {
+            border: 1px solid #d1d5db;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+            outline: none;
+        }
+
+        .form-textarea {
+            border: 1px solid #d1d5db;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            resize: vertical;
+        }
+
+        .form-textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+            outline: none;
+        }
+
+        /* Active navigation styles */
+        .nav-active {
+            background-color: rgba(22, 163, 74, 0.1);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .nav-active:hover {
+            background-color: rgba(22, 163, 74, 0.15);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown button styles (for Projects when on project pages) */
+        .dropdown-btn-active {
+            background-color: rgba(22, 163, 74, 0.08);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .dropdown-btn-active:hover {
+            background-color: rgba(22, 163, 74, 0.12);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown item styles */
+        .dropdown-active {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+
+        .dropdown-active:hover {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                    <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
+                    <div>
+                        <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
+                        <p class="text-sm text-gray-500 font-medium">Go Vidnyan Sanshodhan Sanstha</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
+                    <a href="index.html#about"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
+
+                    <!-- Projects Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200 flex items-center space-x-1">
+                            <span>Projects</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="lectures.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-green-500">📅</span>
+                                    <div>
+                                        <div class="font-medium">Weekly Lectures</div>
+                                        <div class="text-xs text-gray-500">साप्ताहिक व्याख्याने</div>
+                                    </div>
+                                </a>
+                                <a href="research.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-orange-500">🔬</span>
+                                    <div>
+                                        <div class="font-medium">Research Work</div>
+                                        <div class="text-xs text-gray-500">संशोधन कार्य</div>
+                                    </div>
+                                </a>
+                                <a href="nirmalya.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-blue-500">♻️</span>
+                                    <div>
+                                        <div class="font-medium">Nirmalya Project</div>
+                                        <div class="text-xs text-gray-500">निर्माल्य प्रकल्प</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#awards"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
+                    <a href="gallery.html"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
+                    <a href="query.html"
+                        class="nav-active text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Query</a>
+                    <a href="index.html#contact"
+                        class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 hover:bg-gray-100 rounded-lg smooth-transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
+                <a href="index.html#about"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">About</a>
+                <a href="index.html#projects"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Work</a>
+                <a href="index.html#awards"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Awards</a>
+                <a href="gallery.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Gallery</a>
+                <a href="query.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Query</a>
+                <!-- Project Pages -->
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
+                    <a href="lectures.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-green-50 rounded smooth-transition">📅 साप्ताहिक
+                        व्याख्याने</a>
+                    <a href="research.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-orange-50 rounded smooth-transition">🔬 संशोधन
+                        कार्य</a>
+                    <a href="nirmalya.html"
+                        class="block py-2 px-3 text-gray-700 hover:bg-blue-50 rounded smooth-transition">♻️ निर्माल्य
+                        प्रकल्प</a>
+                </div>
+                <a href="index.html#contact"
+                    class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-gradient-to-br from-green-50 to-white">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-4 sm:px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center bg-green-100 text-green-800 rounded-full px-4 py-1.5 mb-4">
+                        <span class="font-semibold text-sm uppercase tracking-wider">प्रश्न पाठवा</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">
+                        आपली प्रश्न आमच्याकडे पाठवा
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        गो विज्ञान संशोधन संस्थेशी संबंधित कोणतीही शंका किंवा माहिती मिळविण्यासाठी आमच्याशी संपर्क साधा.
+                        आम्ही आपल्या सर्व प्रश्नांची उत्तरे देण्यासाठी सदैव तयार आहोत.
+                    </p>
+                    <div class="w-16 h-0.5 bg-orange-400 mx-auto rounded-full mt-6"></div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 card-minimal">
+                    <form id="queryForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    नाव <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" required
+                                    class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+                                    placeholder="आपले पूर्ण नाव">
+                            </div>
+
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    ईमेल <span class="text-red-500">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+                                    placeholder="your.email@example.com">
+                            </div>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                                दूरध्वनी क्रमांक
+                            </label>
+                            <input type="tel" id="phone" name="phone"
+                                class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+                                placeholder="+91 XXXXX XXXXX">
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">
+                                विषय <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="subject" name="subject" required
+                                class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+                                placeholder="आपल्या प्रश्नचा विषय">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                                प्रश्न/संदेश <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="form-textarea w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500"
+                                placeholder="आपली प्रश्न किंवा संदेश येथे लिहा..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center pt-4">
+                            <button type="submit"
+                                class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg shadow-lg hover:from-green-700 hover:to-green-800 smooth-transition transform hover:scale-105">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                </svg>
+                                पाठवा
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <div>
+                                <h3 class="text-sm font-semibold text-green-800">प्रश्न यशस्वीरित्या पाठवली!</h3>
+                                <p class="text-sm text-green-700 mt-1">आम्ही लवकरच आपल्याशी संपर्क करू.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="mt-12 text-center">
+                    <h3 class="text-2xl font-bold marathi-heading primary-green mb-6">किंवा थेट संपर्क साधा</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Phone -->
+                        <div class="bg-white rounded-lg p-6 shadow-md card-minimal">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-xl mx-auto flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">दूरध्वनी</h4>
+                            <a href="tel:+918888871310" class="text-green-600 hover:text-green-700 font-medium">
+                                +91 88888 71310
+                            </a>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="bg-white rounded-lg p-6 shadow-md card-minimal">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl mx-auto flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">ईमेल</h4>
+                            <a href="mailto:info@govidnyan-pune.org"
+                                class="text-blue-600 hover:text-blue-700 font-medium">
+                                info@govidnyan-pune.org
+                            </a>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="bg-white rounded-lg p-6 shadow-md card-minimal">
+                            <div
+                                class="w-12 h-12 bg-orange-100 rounded-xl mx-auto flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">पत्ता</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                अ/३, विष्णुकृपा सोसायटी<br>
+                                नवा विष्णू चौक, बाजीराव रोड<br>
+                                पुणे - ४११००२, महाराष्ट्र
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="primary-green-bg text-white py-6">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                <div class="flex items-center space-x-3">
+                    <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-8">
+                    <div class="text-left">
+                        <span class="text-md font-bold marathi-heading text-white block leading-tight">गो
+                            विज्ञान संशोधन संस्था</span>
+                        <span class="text-sm text-green-200 font-medium">Go Vidnyan Sanshodhan Sanstha</span>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-green-200 text-sm font-medium">&copy; २०२५ गो विज्ञान संशोधन संस्था. सर्व
+                        हक्क राखीव.</p>
+                    <p class="text-orange-200 text-sm font-semibold mt-1">२००२ पासून निरंतर सेवारत •</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- // EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("Z7iP__VVKGg31MfC5");
+        })();
+    </script>
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('queryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Send form data using EmailJS
+            emailjs.sendForm('service_qumsgsg', 'template_vu0u4yo', this)
+                .then(() => {
+                    // Show success message
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.classList.remove('hidden');
+
+                    this.reset(); // reset form
+
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                }, (error) => {
+                    console.error('EmailJS error:', error);
+                    alert('⚠️ Something went wrong. Please try again later.');
+                });
+        });
+
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+
+            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+</content>
