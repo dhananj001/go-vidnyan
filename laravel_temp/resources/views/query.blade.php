@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="mr" class="scroll-smooth">
 
 <head>
