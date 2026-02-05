@@ -239,7 +239,7 @@
                     class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
             </div>
         </nav>
-    </header>
+    </header> 
 
     <!-- Main Content -->
     <main class="min-h-screen bg-gradient-to-br from-green-50 to-white">
