@@ -131,7 +131,7 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <nav class="container mx-auto px-4 sm:px-6 py-3">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                <a href="{{ url('/') }}" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
                     <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
                     <div>
                         <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
@@ -140,9 +140,9 @@
                 </a>
 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html"
+                    <a href="{{ url('/') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
-                    <a href="index.html#about"
+                    <a href="{{ url('/') }}#about"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
 
                     <!-- Projects Dropdown -->
@@ -159,7 +159,7 @@
                         <div
                             class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="py-2">
-                                <a href="lectures.html"
+                                <a href="{{ url('/lectures') }}"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-green-500">📅</span>
                                     <div>
@@ -167,7 +167,7 @@
                                         <div class="text-xs text-gray-500">साप्ताहिक व्याख्याने</div>
                                     </div>
                                 </a>
-                                <a href="research.html"
+                                <a href="{{ url('/research') }}"
                                     class="dropdown-active block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-orange-500">🔬</span>
                                     <div>
@@ -175,7 +175,7 @@
                                         <div class="text-xs text-gray-500">संशोधन कार्य</div>
                                     </div>
                                 </a>
-                                <a href="nirmalya.html"
+                                <a href="{{ url('/nirmalya') }}"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-blue-500">♻️</span>
                                     <div>
@@ -187,13 +187,13 @@
                         </div>
                     </div>
 
-                    <a href="index.html#awards"
+                    <a href="{{ url('/') }}#awards"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
-                    <a href="gallery.html"
+                    <a href="{{ url('/gallery') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
-                    <a href="query.html"
+                    <a href="{{ url('/query') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Query</a>
-                    <a href="index.html#contact"
+                    <a href="{{ url('/') }}#contact"
                         class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
                 </div>
 
@@ -206,30 +206,30 @@
             </div>
 
             <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
-                <a href="index.html#about"
+                <a href="{{ url('/') }}#about"
                     class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">About</a>
-                <a href="index.html#projects"
+                <a href="{{ url('/') }}#projects"
                     class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Work</a>
-                <a href="index.html#awards"
+                <a href="{{ url('/') }}#awards"
                     class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Awards</a>
-                <a href="gallery.html"
+                <a href="{{ url('/gallery') }}"
                     class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Gallery</a>
-                <a href="query.html"
+                <a href="{{ url('/query') }}"
                     class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Query</a>
                 <!-- Project Pages -->
                 <div class="border-t border-gray-200 mt-2 pt-2">
                     <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
-                    <a href="lectures.html"
+                    <a href="{{ url('/lectures') }}"
                         class="block py-2 px-3 text-gray-700 hover:bg-green-50 rounded smooth-transition">📅 साप्ताहिक
                         व्याख्याने</a>
-                    <a href="research.html"
+                    <a href="{{ url('/research') }}"
                         class="block py-2 px-3 text-orange-700 bg-orange-50 rounded smooth-transition font-medium">🔬
                         संशोधन कार्य</a>
-                    <a href="nirmalya.html"
+                    <a href="{{ url('/nirmalya') }}"
                         class="block py-2 px-3 text-gray-700 hover:bg-blue-50 rounded smooth-transition">♻️ निर्माल्य
                         प्रकल्प</a>
                 </div>
-                <a href="index.html#contact"
+                <a href="{{ url('/') }}#contact"
                     class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
             </div>
         </nav>
@@ -296,7 +296,7 @@
                                 <h3 class="text-xl font-bold marathi-heading text-gray-800 mb-2">संशोधन सहभाग</h3>
                                 <p class="text-3xl font-bold text-orange-600 mb-1">२०+</p>
                                 <p class="text-gray-600">प्रकाशित पेपर्स</p>
-                                <a href="query.html"
+                                <a href="{{ url('/query') }}"
                                     class="inline-block mt-4 px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 smooth-transition font-medium">
                                     संपर्क साधा
                                 </a>
@@ -552,7 +552,7 @@
                         सहकार्यासाठी आमच्याशी संपर्क साधा.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="query.html"
+                        <a href="{{ url('/query') }}"
                             class="inline-flex items-center justify-center px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 smooth-transition">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -560,7 +560,7 @@
                             </svg>
                             संपर्क साधा
                         </a>
-                        <a href="index.html#contact"
+                        <a href="{{ url('/') }}#contact"
                             class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-700 smooth-transition">
                             अधिक माहिती
                         </a>

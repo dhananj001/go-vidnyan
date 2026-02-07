@@ -69,7 +69,7 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <nav class="container mx-auto px-4 sm:px-6 py-3">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                <a href="{{ url('/') }}" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
                     <img src="images/go-vidnyan-logo.png" alt="Go Vidnyan Logo" class="h-12">
                     <div>
                         <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
@@ -78,9 +78,9 @@
                 </a>
 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html"
+                    <a href="{{ url('/') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
-                    <a href="about.html"
+                    <a href="{{ url('/about') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
 
                     <!-- Projects Dropdown -->
@@ -97,7 +97,7 @@
                         <div
                             class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="py-2">
-                                <a href="projects.html"
+                                <a href="{{ url('/projects') }}"
                                     class="block px-4 py-3 text-sm text-green-700 bg-green-50 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-green-500">📋</span>
                                     <div>
@@ -105,7 +105,7 @@
                                         <div class="text-xs text-gray-500">सर्व प्रकल्प</div>
                                     </div>
                                 </a>
-                                <a href="lectures.html"
+                                <a href="{{ url('/lectures') }}"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-green-500">📅</span>
                                     <div>
@@ -113,7 +113,7 @@
                                         <div class="text-xs text-gray-500">साप्ताहिक व्याख्याने</div>
                                     </div>
                                 </a>
-                                <a href="research.html"
+                                <a href="{{ url('/research') }}"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-orange-500">🔬</span>
                                     <div>
@@ -121,7 +121,7 @@
                                         <div class="text-xs text-gray-500">संशोधन कार्य</div>
                                     </div>
                                 </a>
-                                <a href="nirmalya.html"
+                                <a href="{{ url('/nirmalya') }}"
                                     class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 flex items-center space-x-3">
                                     <span class="text-blue-500">♻️</span>
                                     <div>
@@ -133,13 +133,13 @@
                         </div>
                     </div>
 
-                    <a href="awards.html"
+                    <a href="{{ url('/awards') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
-                    <a href="team.html"
+                    <a href="{{ url('/team') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Team</a>
-                    <a href="gallery.html"
+                    <a href="{{ url('/gallery') }}"
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
-                    <a href="contact.html"
+                    <a href="{{ url('/contact') }}"
                         class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
                 </div>
 
@@ -152,19 +152,19 @@
             </div>
 
             <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
-                <a href="index.html"
+                <a href="{{ url('/') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Home</a>
-                <a href="about.html"
+                <a href="{{ url('/about') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">About</a>
-                <a href="projects.html"
+                <a href="{{ url('/projects') }}"
                     class="block py-2 px-3 text-green-700 bg-green-50 rounded smooth-transition font-medium">Projects</a>
-                <a href="awards.html"
+                <a href="{{ url('/awards') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Awards</a>
-                <a href="team.html"
+                <a href="{{ url('/team') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Team</a>
-                <a href="gallery.html"
+                <a href="{{ url('/gallery') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Gallery</a>
-                <a href="contact.html"
+                <a href="{{ url('/contact') }}"
                     class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
             </div>
         </nav>
@@ -196,7 +196,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                     <!-- Lectures Page Link -->
-                    <a href="lectures.html"
+                    <a href="{{ url('/lectures') }}"
                         class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 shadow-md border border-green-200 hover:shadow-xl hover:border-green-400 transition-all duration-300 group block">
                         <div class="text-center">
                             <div
@@ -224,7 +224,7 @@
                     </a>
 
                     <!-- Research Page Link -->
-                    <a href="research.html"
+                    <a href="{{ url('/research') }}"
                         class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-8 shadow-md border border-orange-200 hover:shadow-xl hover:border-orange-400 transition-all duration-300 group block">
                         <div class="text-center">
                             <div
@@ -251,7 +251,7 @@
                     </a>
 
                     <!-- Nirmalya Page Link -->
-                    <a href="nirmalya.html"
+                    <a href="{{ url('/nirmalya') }}"
                         class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-md border border-blue-200 hover:shadow-xl hover:border-blue-400 transition-all duration-300 group block">
                         <div class="text-center">
                             <div
@@ -610,11 +610,11 @@
                         गो विज्ञान संशोधन संस्थेच्या विविध प्रकल्पांबद्दल अधिक माहिती मिळवा.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="lectures.html"
+                        <a href="{{ url('/lectures') }}"
                             class="inline-flex items-center justify-center px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 smooth-transition">
                             साप्ताहिक व्याख्याने
                         </a>
-                        <a href="research.html"
+                        <a href="{{ url('/research') }}"
                             class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-700 smooth-transition">
                             संशोधन कार्य
                         </a>
@@ -647,25 +647,25 @@
                     <h3 class="font-bold text-lg mb-4 marathi-heading">त्वरित लिंक्स</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <ul class="space-y-2">
-                            <li><a href="index.html"
+                            <li><a href="{{ url('/') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
-                            <li><a href="about.html"
+                            <li><a href="{{ url('/about') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
                             </li>
-                            <li><a href="projects.html"
+                            <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
-                            <li><a href="research.html"
+                            <li><a href="{{ url('/research') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">संशोधन</a></li>
                         </ul>
                         <ul class="space-y-2">
-                            <li><a href="awards.html"
+                            <li><a href="{{ url('/awards') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">पुरस्कार</a></li>
-                            <li><a href="team.html"
+                            <li><a href="{{ url('/team') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">टीम</a></li>
-                            <li><a href="gallery.html"
+                            <li><a href="{{ url('/gallery') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">गॅलरी</a></li>
-                            <li><a href="contact.html"
+                            <li><a href="{{ url('/contact') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">संपर्क</a></li>
                         </ul>
                     </div>
