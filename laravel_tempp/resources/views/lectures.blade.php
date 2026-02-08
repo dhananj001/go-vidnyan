@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>साप्ताहिक व्याख्याने | गो विज्ञान संशोधन संस्था</title>
+    <link rel="icon" type="image/png" href="images/go-vidnyan-favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Minimalist UI/UX styles */
+        :root {
+            --primary-green: #16a34a;
+            --accent-orange: #ea580c;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --background: #ffffff;
+            --light-gray: #f9fafb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .marathi-heading {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        .primary-green {
+            color: var(--primary-green);
+        }
+
+        .primary-green-bg {
+            background-color: var(--primary-green);
+        }
+
+        .accent-orange {
+            color: var(--accent-orange);
+        }
+
+        .accent-orange-bg {
+            background-color: var(--accent-orange);
+        }
+
+        /* Minimal transitions */
+        .smooth-transition {
+            transition: all 0.2s ease;
+        }
+
+        .card-minimal {
+            border: 1px solid #e5e7eb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-minimal:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
+        }
+
+        /* Schedule card styles */
+        .schedule-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #16a34a, #ea580c);
+        }
+
+        /* Active navigation styles */
+        .nav-active {
+            background-color: rgba(22, 163, 74, 0.1);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .nav-active:hover {
+            background-color: rgba(22, 163, 74, 0.15);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown button styles (for Projects when on project pages) */
+        .dropdown-btn-active {
+            background-color: rgba(22, 163, 74, 0.08);
+            color: var(--primary-green) !important;
+            font-weight: 600;
+        }
+
+        .dropdown-btn-active:hover {
+            background-color: rgba(22, 163, 74, 0.12);
+            color: var(--primary-green) !important;
+        }
+
+        /* Active dropdown item styles */
+        .dropdown-active {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+
+        .dropdown-active:hover {
+            background-color: var(--primary-green);
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="{{ url('/') }}" class="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+                    <img src="{{ asset('images/go-vidnyan-logo.png') }}" alt="Go Vidnyan Logo" class="h-12">
+                    <div>
+                        <h1 class="text-lg font-bold marathi-heading primary-green">गो विज्ञान संशोधन संस्था</h1>
+                        <p class="text-sm text-gray-500 font-medium">Go Vidnyan Sanshodhan Sanstha</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="{{ url('/') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Home</a>
+                    <a href="{{ url('/about') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">About</a>
+
+                    <!-- Projects Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="dropdown-btn-active text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200 flex items-center space-x-1">
+                            <span>Projects</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="{{ url('/projects') }}"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-gray-500">📋</span>
+                                    <div>
+                                        <div class="font-medium">All Projects</div>
+                                        <div class="text-xs text-gray-500">सर्व प्रकल्प</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/lectures') }}"
+                                    class="dropdown-active block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-green-500">📅</span>
+                                    <div>
+                                        <div class="font-medium">Weekly Lectures</div>
+                                        <div class="text-xs text-gray-500">साप्ताहिक व्याख्याने</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/research') }}"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-orange-500">🔬</span>
+                                    <div>
+                                        <div class="font-medium">Research Work</div>
+                                        <div class="text-xs text-gray-500">संशोधन कार्य</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('/nirmalya') }}"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 flex items-center space-x-3">
+                                    <span class="text-blue-500">♻️</span>
+                                    <div>
+                                        <div class="font-medium">Nirmalya Project</div>
+                                        <div class="text-xs text-gray-500">निर्माल्य प्रकल्प</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{{ url('/awards') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Awards</a>
+                    <a href="{{ url('/team') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Team</a>
+                    <a href="{{ url('/gallery') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
+                    <a href="{{ url('/contact') }}"
+                        class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 hover:bg-gray-100 rounded-lg smooth-transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 space-y-2">
+                <a href="{{ url('/') }}#about"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">About</a>
+                <a href="{{ url('/') }}#projects"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Work</a>
+                <a href="{{ url('/') }}#awards"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Awards</a>
+                <a href="{{ url('/gallery') }}"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Gallery</a>
+                <a href="{{ url('/query') }}"
+                    class="block py-2 text-gray-700 hover:text-green-600 smooth-transition font-medium">Query</a>
+                <!-- Project Pages -->
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
+                    <a href="{{ url('/lectures') }}"
+                        class="block py-2 px-3 text-green-700 bg-green-50 rounded smooth-transition font-medium">📅
+                        साप्ताहिक व्याख्याने</a>
+                    <a href="{{ url('/research') }}"
+                        class="block py-2 px-3 text-gray-700 hover:bg-orange-50 rounded smooth-transition">🔬 संशोधन
+                        कार्य</a>
+                    <a href="{{ url('/nirmalya') }}"
+                        class="block py-2 px-3 text-gray-700 hover:bg-blue-50 rounded smooth-transition">♻️ निर्माल्य
+                        प्रकल्प</a>
+                </div>
+                <a href="{{ url('/') }}#contact"
+                    class="block py-2 primary-green-bg text-white text-center rounded-lg mt-3 smooth-transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-gradient-to-br from-green-50 to-white">
+        <!-- Hero Section -->
+        <section class="relative py-16 px-4 sm:px-6">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center bg-green-100 text-green-800 rounded-full px-4 py-1.5 mb-4">
+                        <span class="font-semibold text-sm uppercase tracking-wider">साप्ताहिक व्याख्याने</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold marathi-heading primary-green mb-4 leading-tight">
+                        देशी गायींवरील साप्ताहिक व्याख्याने व परिसंवाद
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        भारतीय देशी गायींच्या महत्त्वावर, पंचगव्याचे फायदे, गो-आधारित शेती आणि आरोग्य यावर
+                        नियमित ज्ञानप्रसार कार्यक्रम
+                    </p>
+                    <div class="w-16 h-0.5 bg-orange-400 mx-auto rounded-full mt-6"></div>
+                </div>
+
+                <!-- Program Overview -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 card-minimal mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold marathi-heading primary-green mb-4">कार्यक्रमाची माहिती</h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                गो विज्ञान संशोधन संस्था दर आठवड्याला देशी गायी व पंचगव्य संबंधित विविध विषयांवर
+                                व्याख्याने व परिसंवाद आयोजित करते. या कार्यक्रमात तज्ञ वक्ते, शेतकरी, वैद्य आणि
+                                संशोधक आपले अनुभव व ज्ञान श्रोत्यांसोबत शेअर करतात.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">दर मंगळवारी रात्री ८ ते ९ वाजता</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">आभासी पध्दतीतून</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">सर्वांसाठी विनामूल्य प्रवेश</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-100 to-orange-50 rounded-xl p-6">
+                            <div class="text-center">
+                                <div
+                                    class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-4 shadow-md">
+                                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold marathi-heading text-gray-800 mb-2">पुढील व्याख्यान</h3>
+                                <p class="text-3xl font-bold text-green-600 mb-1">मंगळवार</p>
+                                <p class="text-gray-600">रात्री ८:०० ते ९:०० वाजता</p>
+                                <a href="{{ url('/query') }}"
+                                    class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 smooth-transition font-medium">
+                                    नोंदणी करा
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topics Covered -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold marathi-heading primary-green mb-8 text-center">व्याख्यानांचे विषय
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Topic 1 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">देशी गायींचे महत्त्व
+                                </h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    भारतीय देशी गायींच्या विविध जाती, त्यांचे वैशिष्ट्ये आणि संवर्धनाची गरज
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Topic 2 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">पंचगव्य चिकित्सा</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    पंचगव्य आधारित आयुर्वेदिक उपचार पद्धती आणि आरोग्य लाभ
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Topic 3 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">गो-आधारित शेती</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    सेंद्रिय शेतीमध्ये गोमूत्र, शेणखत आणि जीवामृताचा वापर
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Topic 4 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">वैदिक गोपालन</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    प्राचीन भारतीय ग्रंथातील गोपालन पद्धती आणि त्यांचे आधुनिक संदर्भ
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Topic 5 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">A2 दूध आणि आरोग्य</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    देशी गायींच्या A2 दुधाचे आरोग्यदायी फायदे आणि वैज्ञानिक संशोधन
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Topic 6 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md card-minimal schedule-card">
+                            <div class="pl-4">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">पर्यावरण संरक्षण</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    गोपालनाचा पर्यावरणावर सकारात्मक परिणाम आणि शाश्वत विकास
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Lectures Highlights -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 card-minimal mb-12">
+                    <h2 class="text-3xl font-bold marathi-heading primary-green mb-8 text-center">मागील व्याख्यानांचे
+                        ठळक
+                        मुद्दे</h2>
+                    <div class="space-y-6">
+                        <!-- Lecture 1 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 bg-gray-50 rounded-xl">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">१</span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-1">देशी गायींच्या जातींचे
+                                    संवर्धन</h3>
+                                <p class="text-gray-600 text-sm">वक्ते: डॉ. श्रीधर केतकर | श्रोते: १५०+</p>
+                            </div>
+                            <div class="text-green-600 font-semibold text-sm">डिसेंबर २०२४</div>
+                        </div>
+
+                        <!-- Lecture 2 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 bg-gray-50 rounded-xl">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">२</span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-1">पंचगव्य चिकित्सेचे
+                                    वैज्ञानिक आधार</h3>
+                                <p class="text-gray-600 text-sm">वक्ते: वैद्य अनिल पाटील | श्रोते: १२०+</p>
+                            </div>
+                            <div class="text-orange-600 font-semibold text-sm">नोव्हेंबर २०२४</div>
+                        </div>
+
+                        <!-- Lecture 3 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 bg-gray-50 rounded-xl">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">३</span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-1">जीवामृत शेतीचे फायदे
+                                </h3>
+                                <p class="text-gray-600 text-sm">वक्ते: श्री. सुभाष पाळेकर | श्रोते: २००+</p>
+                            </div>
+                            <div class="text-blue-600 font-semibold text-sm">ऑक्टोबर २०२४</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">व्याख्यानात सहभागी व्हा!</h2>
+                    <p class="text-green-100 mb-6 max-w-2xl mx-auto">
+                        आमच्या साप्ताहिक व्याख्यानात सहभागी होण्यासाठी आजच नोंदणी करा. ज्ञान मिळवा, प्रश्न विचारा
+                        आणि देशी गायींच्या संवर्धनात योगदान द्या.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="{{ url('/query') }}"
+                            class="inline-flex items-center justify-center px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 smooth-transition">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                            नोंदणी करा
+                        </a>
+                        <a href="{{ url('/') }}#contact"
+                            class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-700 smooth-transition">
+                            अधिक माहिती
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="primary-green-bg text-white pt-4 pb-2">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-4">
+                <!-- Logo & About -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="{{ asset('images/go-vidnyan-logo.png') }}" alt="Go Vidnyan Logo" class="h-10">
+                        <div>
+                            <span class="text-lg font-bold marathi-heading block">गो विज्ञान संशोधन संस्था</span>
+                            <span class="text-green-200 text-sm">Go Vidnyan Sanshodhan Sanstha</span>
+                        </div>
+                    </div>
+                    <p class="text-green-100 text-sm max-w-xs">
+                        भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित संस्था. २००२ पासून निरंतर सेवारत.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 marathi-heading">त्वरित लिंक्स</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <ul class="space-y-2">
+                            <li><a href="{{ url('/') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
+                            </li>
+                            <li><a href="{{ url('/about') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                            </li>
+                            <li><a href="{{ url('/projects') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
+                            <li><a href="{{ url('/research') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संशोधन</a></li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li><a href="{{ url('/awards') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">पुरस्कार</a></li>
+                            <li><a href="{{ url('/team') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">टीम</a></li>
+                            <li><a href="{{ url('/gallery') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">गॅलरी</a></li>
+                            <li><a href="{{ url('/contact') }}"
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संपर्क</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 marathi-heading">संपर्क माहिती</h3>
+                    <div class="space-y-3">
+                        <!-- Address -->
+                        <div class="flex items-start space-x-3">
+                            <div
+                                class="w-8 h-8 bg-orange-400/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-orange-400/30 flex-shrink-0">
+                                <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-green-100 text-sm">
+                                <p class="font-medium">अ/३, विष्णुकृपा सोसायटी</p>
+                                <p>नवा विष्णू चौक, बाजीराव रोड</p>
+                                <p class="text-orange-200 font-semibold">पुणे - ४११००२, महाराष्ट्र</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-8 h-8 bg-green-400/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-green-400/30 flex-shrink-0">
+                                <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-green-100 text-sm">
+                                <p class="font-medium">श्री. ज्ञानेश्वर साठे</p>
+                                <a href="tel:+918888871310"
+                                    class="text-orange-200 hover:text-white transition-colors">+91 8888871310</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-8 h-8 bg-blue-400/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-400/30 flex-shrink-0">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-green-100 text-sm">
+                                <a href="mailto:govidnyan.ss@gmail.com"
+                                    class="text-orange-200 hover:text-white transition-colors">govidnyan.ss@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media & Newsletter -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
+                    <div class="space-y-3">
+                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <div class="flex space-x-3">
+                            <!-- Facebook -->
+                            <a href="#"
+                                class="w-10 h-10 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-600/30 hover:bg-blue-600/30 transition-colors">
+                                <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <!-- Twitter -->
+                            <a href="#"
+                                class="w-10 h-10 bg-sky-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-sky-500/30 hover:bg-sky-500/30 transition-colors">
+                                <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="#"
+                                class="w-10 h-10 bg-red-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-red-600/30 hover:bg-red-600/30 transition-colors">
+                                <svg class="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Newsletter -->
+                        <div class="mt-4">
+                            <p class="text-green-100 text-sm mb-2">न्यूजलेटरसाठी साइन अप करा</p>
+                            <div class="flex">
+                                <input type="email" placeholder="तुमचा ईमेल"
+                                    class="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-l-lg text-white placeholder-green-200 text-sm focus:outline-none focus:border-orange-400">
+                                <button
+                                    class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-r-lg transition-colors text-sm font-medium">सबमिट</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+
+            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
