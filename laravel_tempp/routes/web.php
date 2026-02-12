@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('index');
@@ -26,9 +27,9 @@ Route::get('/nirmalya', function () {
 Route::get('/awards', function () {
     return view('awards');
 });
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
 Route::get('/query', function () {
     return view('query');
 });
@@ -37,4 +38,10 @@ Route::get('/team', function () {
 });
 Route::get('/contact', function () {
     return view('contact');
+});
+use App\Http\Controllers\Admin\ImageController;
+
+// Admin routes for gallery CRUD
+Route::prefix('admin')->group(function () {
+    Route::resource('images', ImageController::class);
 });

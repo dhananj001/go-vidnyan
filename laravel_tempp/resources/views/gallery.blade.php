@@ -848,6 +848,32 @@
                     </div>
                 </div>
 
+        <!-- Gallery Grid -->
+<div class="masonry-grid gap-6" id="gallery-grid">
+    <!-- Dynamic images from admin -->
+    @foreach($images as $img)
+    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
+         data-category="{{ $img->category ?? 'all projects' }}">
+        <div class="relative">
+            <img src="{{ asset('images/' . $img->image) }}" 
+                 alt="{{ $img->title }}" 
+                 class="w-full object-cover"
+                 style="height:250px;"> <!-- keeps same size for all images -->
+            @if($img->title || $img->description)
+            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
+                <div class="text-white">
+                    <h3 class="text-lg font-bold marathi-heading mb-1">{{ $img->title }}</h3>
+                    @if($img->description)
+                    <p class="text-sm opacity-90">{{ $img->description }}</p>
+                    @endif
+                </div>
+            </div>
+            @endif
+        </div>
+    </div>
+    @endforeach
+</div>
+ 
                 <!-- Lightbox Modal -->
                 <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
                     <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center">
