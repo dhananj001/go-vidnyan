@@ -329,6 +329,13 @@
                         class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Team</a>
                     <a href="{{ url('/gallery') }}"
                         class="nav-active text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200">Gallery</a>
+                    <a href="{{ route('login') }}"
+                        class="text-gray-700 hover:text-green-600 smooth-transition font-medium text-sm uppercase tracking-wider px-3 py-2 rounded-md hover:bg-green-50 transition-all duration-200 flex items-center justify-center"
+                        title="Admin Login">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </a>
                     <a href="{{ url('/contact') }}"
                         class="primary-green-bg text-white px-6 py-2 rounded-lg smooth-transition hover:opacity-90 hover:shadow-md font-medium text-sm uppercase tracking-wider transform hover:scale-105 transition-all duration-200">Contact</a>
                 </div>
@@ -354,6 +361,14 @@
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Gallery</a>
                 <a href="{{ url('/query') }}"
                     class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition">Query</a>
+                <a href="{{ route('login') }}"
+                    class="block py-2 px-3 text-gray-700 hover:bg-gray-50 rounded smooth-transition flex items-center space-x-2"
+                    title="Admin Login">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span>Admin</span>
+                </a>
                 <!-- Project Pages -->
                 <div class="border-t border-gray-200 mt-2 pt-2">
                     <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">विशेष प्रकल्प</p>
@@ -407,445 +422,33 @@
                                 onclick="showTab('all')">
                                 सर्व छायाचित्रे
                             </button>
+                            @foreach($categories as $category)
                             <button
                                 class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
-                                onclick="showTab('projects')">
-                                प्रकल्प
+                                onclick="showTab('{{ $category->slug }}')">
+                                {{ $category->name }}
                             </button>
-                            <button
-                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
-                                onclick="showTab('cows')">
-                                गायींचे संवर्धन
-                            </button>
-                            <button
-                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
-                                onclick="showTab('certificates')">
-                                प्रमाणपत्रे
-                            </button>
-                            <button
-                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
-                                onclick="showTab('agriculture')">
-                                कृषी संबंधित
-                            </button>
-                            <button
-                                class="tab-button px-3 md:px-8 py-2 mx-1 rounded-xl font-medium text-gray-700 text-sm md:text-base"
-                                onclick="showTab('nirmalya')">
-                                निर्माल्य प्रकल्प
-                            </button>
+                            @endforeach
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Grid -->
                 <div class="masonry-grid gap-6" id="gallery-grid">
-                    <!-- All Images (shown by default) -->
+                    @foreach($images as $image)
                     <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
+                        data-category="all {{ $image->category->slug }}">
                         <div class="relative">
-                            <img src="{{ asset('images/2011photo.png') }}" alt="2011 संस्थेचे कार्य" class="w-full object-cover">
+                            <img src="{{ $image->image_url }}" alt="{{ $image->alt_text }}" class="w-full object-cover">
                             <div class="gallery-overlay absolute inset-0 flex items-end p-4">
                                 <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०११</h3>
-                                    <p class="text-sm opacity-90">संस्थेचे प्रारंभिक कार्य</p>
+                                    <h3 class="text-lg font-bold marathi-heading mb-1">{{ $image->title }}</h3>
+                                    <p class="text-sm opacity-90">{{ $image->description }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/2012photo.png') }}" alt="2012 संस्थेचे कार्य" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१२</h3>
-                                    <p class="text-sm opacity-90">विकासाचे वर्ष</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/2019photo001.png') }}" alt="2019 प्रकल्प कार्य" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">शेती विकास कार्य</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/2019photo002.png') }}" alt="2019 संस्था कार्यक्रम" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ कार्यक्रम</h3>
-                                    <p class="text-sm opacity-90">संस्था उपक्रम</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/2019photo003.png') }}" alt="2019 शेती प्रकल्प" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">२०१९ शेती</h3>
-                                    <p class="text-sm opacity-90">कृषी विकास</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/cbof001.png') }}" alt="CBOF प्रकल्प" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">CBOF प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">गो-आधारित शेती</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/cbof002.png') }}" alt="CBOF प्रकल्प कार्य" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">CBOF प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">कार्य प्रक्रिया</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all cows">
-                        <div class="relative">
-                            <img src="{{ asset('images/indiancow.png') }}" alt="भारतीय गाय" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">भारतीय गाय</h3>
-                                    <p class="text-sm opacity-90">देशी गायींचे संवर्धन</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all cows">
-                        <div class="relative">
-                            <img src="{{ asset('images/indiancow002.png') }}" alt="भारतीय गाय" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">भारतीय गाय</h3>
-                                    <p class="text-sm opacity-90">गोपालन</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all cows">
-                        <div class="relative">
-                            <img src="{{ asset('images/Indiancowlist.png') }}" alt="गायींची यादी" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">गायींची यादी</h3>
-                                    <p class="text-sm opacity-90">गोदान कार्यक्रम</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/research.png') }}" alt="संशोधन कार्य" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">संशोधन</h3>
-                                    <p class="text-sm opacity-90">पंचगव्य संशोधन</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all certificates">
-                        <div class="relative">
-                            <img src="{{ asset('images/Legalcertificate001.png') }}" alt="कायदेशीर प्रमाणपत्र"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">प्रमाणपत्र</h3>
-                                    <p class="text-sm opacity-90">कायदेशीर मान्यता</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all certificates">
-                        <div class="relative">
-                            <img src="{{ asset('images/LegalCertifacate002.png') }}" alt="कायदेशीर प्रमाणपत्र"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">प्रमाणपत्र</h3>
-                                    <p class="text-sm opacity-90">संस्था नोंदणी</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190708_182613220.jpg') }}" alt="कृषी प्रकल्प कार्य"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">गोमूत्र आणि गोमय वापर</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190708_182640906_BURST000_COVER_TOP.jpg') }}"
-                                alt="नैसर्गिक शेती" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">नैसर्गिक शेती</h3>
-                                    <p class="text-sm opacity-90">गो-आधारित कृषी पद्धती</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190708_182653508.jpg') }}" alt="शेती उपक्रम"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">शेती उपक्रम</h3>
-                                    <p class="text-sm opacity-90">गो विज्ञानाचे कृषी अनुप्रयोग</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190708_183938709_HDR.jpg') }}" alt="कृषी विकास"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी विकास</h3>
-                                    <p class="text-sm opacity-90">नवीन कृषी तंत्रज्ञान</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190708_192025711.jpg') }}" alt="गोमूत्र खत"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">गोमूत्र खत</h3>
-                                    <p class="text-sm opacity-90">गोमूत्र खत विषयी चर्चा</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190731_081702943.jpg') }}" alt="शेती प्रयोग"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">शेती प्रयोग</h3>
-                                    <p class="text-sm opacity-90">गो विज्ञान प्रयोगशाळा</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all agriculture">
-                        <div class="relative">
-                            <img src="{{ asset('images/agriculturerelated/IMG_20190731_081823616_HDR.jpg') }}" alt="कृषी संशोधन"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">कृषी संशोधन</h3>
-                                    <p class="text-sm opacity-90">विज्ञान आधारित कृषी</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/nirmalyprojectrelated/IMG_20180912_111128196.jpg') }}"
-                                alt="निर्माल्य प्रकल्प कार्य" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">समाजात जागरूकता कटआउट चिकटवणे</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/nirmalyprojectrelated/IMG_20180912_112122499.jpg') }}" alt="निर्माल्य संवर्धन"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य संवर्धन</h3>
-                                    <p class="text-sm opacity-90">समाज भेट आणि जागरूकता प्रसार</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/nirmalyprojectrelated/IMG_20180912_112740343.jpg') }}" alt="गणेशोत्सव निर्माल्य"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">गणेशोत्सव निर्माल्य</h3>
-                                    <p class="text-sm opacity-90">कटआउटद्वारे जनजागृती</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/nirmalyprojectrelated/IMG_20180912_113354474.jpg') }}" alt="निर्माल्य पुनर्वापर"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य पुनर्वापर</h3>
-                                    <p class="text-sm opacity-90">समाजात जागरूकता अभियान</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/nirmalyprojectrelated/IMG_20180912_113406929.jpg') }}" alt="पर्यावरण प्रकल्प"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">पर्यावरण प्रकल्प</h3>
-                                    <p class="text-sm opacity-90">निर्माल्य जागरूकता कटआउट</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all certificates">
-                        <div class="relative">
-                            <img src="{{ asset('images/jan 2026/Award.jpeg') }}" alt="  पुरस्कार" class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1"> पुरस्कार</h3>
-                                    <p class="text-sm opacity-90">पुरस्कार वितरण कार्यक्रम</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all nirmalya">
-                        <div class="relative">
-                            <img src="{{ asset('images/jan 2026/nirmalyatocompost.jpeg') }}" alt="निर्माल्य ते कंपोस्ट"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">निर्माल्य ते कंपोस्ट</h3>
-                                    <p class="text-sm opacity-90">निर्माल्य प्रकल्प कार्य</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/jan 2026/peopleactivity.jpeg') }}" alt="सामाजिक उपक्रम"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">सामाजिक उपक्रम</h3>
-                                    <p class="text-sm opacity-90">जनसहभाग आणि जागरूकता</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/jan 2026/pricedistribution002.jpeg') }}" alt="पुरस्कार वितरण"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">पुरस्कार वितरण</h3>
-                                    <p class="text-sm opacity-90"> प्रकल्प वितरण</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="masonry-item gallery-item bg-white rounded-lg overflow-hidden shadow-md border border-gray-100"
-                        data-category="all projects">
-                        <div class="relative">
-                            <img src="{{ asset('images/jan 2026/pricedistributionceremony.jpeg') }}" alt="पुरस्कार वितरण समारंभ"
-                                class="w-full object-cover">
-                            <div class="gallery-overlay absolute inset-0 flex items-end p-4">
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold marathi-heading mb-1">पुरस्कार वितरण समारंभ</h3>
-                                    <p class="text-sm opacity-90">पुरस्कार वितरण</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <!-- Lightbox Modal -->
@@ -903,49 +506,23 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Video Placeholder 1 -->
+                        @forelse($videos as $video)
                         <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
                             style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
                             <div class="mb-4">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/PTvFbuL2yWw"
-                                    title="पंचगव्य चिकित्सा प्रक्रिया" frameborder="0"
+                                <iframe width="100%" height="200" src="{{ $video->embed_url }}"
+                                    title="{{ $video->title }}" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen class="rounded-xl"></iframe>
                             </div>
-                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">पंचगव्य चिकित्सा प्रक्रिया
-                            </h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">पंचगव्य चिकित्सेच्या विविध पद्धती आणि
-                                त्याचे आरोग्य फायदे</p>
+                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">{{ $video->title }}</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">{{ $video->description }}</p>
                         </div>
-
-                        <!-- Video Placeholder 2 -->
-                        <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
-                            style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
-                            <div class="mb-4">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/xWFvlfrrmro"
-                                    title="गो-आधारित शेती तंत्र" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="rounded-xl"></iframe>
-                            </div>
-                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">गो-आधारित शेती तंत्र</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">गोमूत्र आणि गोमय वापरून नैसर्गिक शेती
-                                करण्याचे मार्ग</p>
+                        @empty
+                        <div class="col-span-3 text-center py-12">
+                            <p class="text-gray-500 text-lg">व्हिडिओ सामग्री लवकरच उपलब्ध होणार आहे</p>
                         </div>
-
-                        <!-- Video Placeholder 3 -->
-                        <div class="bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 backdrop-blur-sm rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-emerald-100/50 hover:border-emerald-200/70"
-                            style="background-image: radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.02) 0%, transparent 50%);">
-                            <div class="mb-4">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/3r8ul0PNWy4"
-                                    title="संस्थेचे कार्य परिचय" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="rounded-xl"></iframe>
-                            </div>
-                            <h3 class="text-lg font-bold marathi-heading text-gray-800 mb-2">संस्थेचे कार्य परिचय
-                            </h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">गो विज्ञान संशोधन संस्थेच्या कार्याचे
-                                संपूर्ण परिचय</p>
-                        </div>
+                        @endforelse
                     </div> <!-- Call to Action -->
                     <div
                         class="text-center mt-16 bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
