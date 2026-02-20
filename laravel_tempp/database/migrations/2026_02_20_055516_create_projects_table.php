@@ -13,15 +13,21 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description');
-            $table->longText('content')->nullable();
+            $table->longText('content');
+
             $table->enum('status', ['ongoing', 'completed', 'featured']);
+
             $table->date('start_date');
             $table->date('end_date')->nullable();
+
             $table->string('image_path')->nullable();
-            $table->string('category')->nullable(); // featured, ongoing, past
+
+            $table->enum('category', ['featured', 'ongoing', 'past']);
+
             $table->timestamps();
         });
     }

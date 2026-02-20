@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ProjectImage extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'project_id',
         'image_path',
@@ -13,7 +16,12 @@ class ProjectImage extends Model
         'sort_order',
     ];
 
-    // Each image belongs to a project
+    /*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    */
+
     public function project()
     {
         return $this->belongsTo(Project::class);

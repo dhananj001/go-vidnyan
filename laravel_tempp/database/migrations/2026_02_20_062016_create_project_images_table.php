@@ -13,10 +13,15 @@ return new class extends Migration
     {
         Schema::create('project_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+
+            $table->foreignId('project_id')
+                  ->constrained()
+                  ->onDelete('cascade');
+
             $table->string('image_path');
             $table->string('alt_text')->nullable();
             $table->integer('sort_order')->default(0);
+
             $table->timestamps();
         });
     }
@@ -30,11 +35,3 @@ return new class extends Migration
     }
 };
 
-Schema::create('project_images', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('project_id')->constrained()->onDelete('cascade');
-    $table->string('image_path');
-    $table->string('alt_text')->nullable();
-    $table->integer('sort_order')->default(0);
-    $table->timestamps();
-});

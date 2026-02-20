@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 
 class Project extends Model
 {
-    // ✅ Fillable fields
+    use HasFactory;
+
     protected $fillable = [
         'title',
         'slug',
@@ -18,40 +19,63 @@ class Project extends Model
         'start_date',
         'end_date',
         'image_path',
+        'category',
     ];
 
-    // ✅ Relationship (one project has many images)
+    protected $dates = [
+        'start_date',
+        'end_date',
+    ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    */
+
     public function images()
     {
         return $this->hasMany(ProjectImage::class);
     }
 
-    // ✅ Scopes
-    public function scopeOngoing(Builder $query)
-    {
-        return $query->where('status', 'ongoing');
-    }
+    /*
+    |--------------------------------------------------------------------------
+    | Scopes (Status Filtering)
+    |--------------------------------------------------------------------------
+    */
 
-    public function scopeCompleted(Builder $query)
-    {
-        return $query->where('status', 'completed');
-    }
-
-    public function scopeFeatured(Builder $query)
+    public function scopeFeatured($query)
     {
         return $query->where('status', 'featured');
     }
 
-    // ✅ Accessors (formatted dates)
+    public function scopeOngoing($query)
+    {
+        return $query->where('status', 'ongoing');
+    }
+
+    public function scopeCompleted($query)
+    {
+        return $query->where('status', 'completed');
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Accessors (Formatted Dates)
+    |--------------------------------------------------------------------------
+    */
+
     public function getFormattedStartDateAttribute()
     {
-        return Carbon::parse($this->start_date)->format('d M Y');
+        return $this->start_date
+            ? Carbon::parse($this->start_date)->format('d M Y')
+            : null;
     }
 
     public function getFormattedEndDateAttribute()
     {
         return $this->end_date
             ? Carbon::parse($this->end_date)->format('d M Y')
-            : 'Present';
+            : null;
     }
 }
