@@ -178,7 +178,7 @@
                     <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                         <span class="text-white/90 text-md font-medium">गोविद्यान प्रकल्प</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">आमचे प्रकल्प</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">संस्थेचे  प्रकल्प</h1>
                     <p class="text-xl text-gray-100 max-w-2xl mx-auto">
                         भारतीय गायींच्या संवर्धनासाठी आणि शाश्वत विकासासाठी संस्थेने राबिलेले विविध महत्वाचे प्रकल्प
                     </p>
@@ -589,10 +589,10 @@
         <!-- <section class="py-16 bg-gradient-to-r from-green-600 to-green-700">
             <div class="container mx-auto px-4 sm:px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold marathi-heading text-white mb-6">
-                    आमच्या प्रकल्पांमध्ये सहभागी व्हा
+                    संस्थेच्या प्रकल्पांमध्ये सहभागी व्हा
                 </h2>
                 <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-                    स्वयंसेवक, दाता किंवा भागीदार म्हणून आमच्यासोबत या आणि गोसेवेचे महत्वाचे कार्य पुढे न्या
+                    स्वयंसेवक, दाता किंवा भागीदार म्हणून संस्थेसोबत या आणि गोसेवेचे महत्वाचे कार्य पुढे न्या
                 </p>
                 <a href="contact.html"
                     class="inline-flex items-center justify-center bg-white text-green-700 font-semibold py-3 px-8 rounded-lg smooth-transition hover:bg-gray-50 shadow-lg">
@@ -605,7 +605,7 @@
         <section class="py-16 px-4 sm:px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <h2 class="text-2xl font-bold marathi-heading mb-4">आमचे प्रकल्प पहा</h2>
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">संस्थेचे  प्रकल्प पहा</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
                         गो विज्ञान संशोधन संस्थेच्या विविध प्रकल्पांबद्दल अधिक माहिती मिळवा.
                     </p>
@@ -651,7 +651,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -736,7 +736,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

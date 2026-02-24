@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आमच्याबद्दल | गो विज्ञान संशोधन संस्था</title>
+    <title>संस्थेबद्दल | गो विज्ञान संशोधन संस्था</title>
     <link rel="icon" type="image/png" href="images/go-vidnyan-favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,9 +187,9 @@
                     <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                         <span class="text-white/90 text-md font-medium">Est. 2002 | पुणे</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">आमच्याबद्दल</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">संस्थेबद्दल</h1>
                     <p class="text-xl text-gray-100 max-w-2xl mx-auto">
-                        गो विज्ञान संशोधन संस्थेची स्थापना, ध्येय, कार्यक्षेत्रे आणि आमची दृष्टी
+                        गो विज्ञान संशोधन संस्थेची स्थापना, ध्येय, कार्यक्षेत्रे आणि संस्थेची दृष्टी
                     </p>
                 </div>
             </div>
@@ -254,7 +254,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-gray-900 text-2xl marathi-heading mb-3">आमचे ध्येय</h3>
+                                    <h3 class="font-bold text-gray-900 text-2xl marathi-heading mb-3">संस्थेचे  ध्येय</h3>
                                     <p class="text-gray-700 leading-relaxed text-lg">
                                         भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी समर्पित आहे, वैज्ञानिक
                                         दृष्टीकोनातून पंचगव्याच्या महत्त्वाला चालना देणे.
@@ -284,7 +284,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-gray-900 text-2xl marathi-heading mb-3">आमची दृष्टी</h3>
+                                    <h3 class="font-bold text-gray-900 text-2xl marathi-heading mb-3">संस्थेची दृष्टी</h3>
                                     <p class="text-gray-600 leading-relaxed text-lg">
                                         शाश्वत निरामय समाज निर्मितीसाठी वैज्ञानिक दृष्ट्या सिद्ध झालेल्या पंचगव्य
                                         वापराला प्रोत्साहन देणे आणि भारतीय गायींचे संगोपन, संवर्धन व संरक्षण करणे.
@@ -367,7 +367,7 @@
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">आमचा प्रभाव</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">संस्थेचा प्रभाव</h2>
                     <div class="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
@@ -431,7 +431,7 @@
         <!-- <section class="py-16 bg-gradient-to-r from-green-600 to-green-700">
             <div class="container mx-auto px-4 sm:px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold marathi-heading text-white mb-6">
-                    आमच्यासोबत जोडले जा
+                    संस्थेसोबत जोडले जा
                 </h2>
                 <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
                     गोसेवा आणि राष्ट्ररक्षणाच्या या महत्वाच्या कार्यात सहभागी व्हा
@@ -453,7 +453,7 @@
         <section class="py-16 px-4 sm:px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <h2 class="text-2xl font-bold marathi-heading mb-4">आमच्या कार्याबद्दल अधिक जाणून घ्या</h2>
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">संस्थेच्या कार्याबद्दल अधिक जाणून घ्या</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
                         गो विज्ञान संशोधन संस्थेच्या इतिहास, मिशन आणि कार्याबद्दल अधिक माहिती मिळवा.
                     </p>
@@ -499,7 +499,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -584,7 +584,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी  जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

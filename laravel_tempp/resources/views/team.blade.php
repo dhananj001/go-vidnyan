@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आमची टीम | गो विज्ञान संशोधन संस्था</title>
+    <title>संस्थेची टीम | गो विज्ञान संशोधन संस्था</title>
     <link rel="icon" type="image/png" href="images/go-vidnyan-favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,7 +178,7 @@
                     <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                         <span class="text-white/90 text-md font-medium">विश्वस्त व कार्यकारी टीम</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">आमची टीम</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">संस्थेची टीम</h1>
                     <p class="text-xl text-gray-100 max-w-2xl mx-auto">
                         अनुभवी विश्वस्त आणि कुशल कार्यकारी टीम - एकत्रित प्रयत्नांनी गोसेवा आणि संशोधनाचे कार्य
                     </p>
@@ -451,10 +451,10 @@
                 <div
                     class="bg-gradient-to-br from-green-50 to-orange-50 rounded-2xl p-8 lg:p-12 border border-green-100 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">
-                        आमच्या टीममध्ये सहभागी व्हा
+                        संस्थेच्या टीममध्ये सहभागी व्हा
                     </h2>
                     <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                        गोसेवा आणि राष्ट्ररक्षणाच्या या महत्वाच्या कार्यात स्वयंसेवक म्हणून सहभागी होण्यासाठी आमच्याशी
+                        गोसेवा आणि राष्ट्ररक्षणाच्या या महत्वाच्या कार्यात स्वयंसेवक म्हणून सहभागी होण्यासाठी संस्थेशी 
                         संपर्क साधा
                     </p>
                     <a href="{{ url('/contact') }}"
@@ -469,7 +469,7 @@
         <!-- <section class="py-16 px-4 sm:px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <h2 class="text-2xl font-bold marathi-heading mb-4">आमची टीम भेटा</h2>
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">संस्थेची टीम भेटा</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
                         गो विज्ञान संशोधन संस्थेच्या कार्यकर्ते आणि संशोधकांबद्दल अधिक माहिती मिळवा.
                     </p>
@@ -515,7 +515,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -600,7 +600,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

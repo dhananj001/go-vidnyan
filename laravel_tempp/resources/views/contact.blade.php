@@ -178,9 +178,9 @@
                     <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                         <span class="text-white/90 text-md font-medium">संपर्क साधा</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">आमच्याशी संपर्क करा</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold marathi-heading mb-6">संस्थेशी संपर्क करा</h1>
                     <p class="text-xl text-gray-100 max-w-2xl mx-auto">
-                        गोसेवा, संशोधन, प्रकल्प किंवा कोणत्याही प्रश्नासाठी आमच्याशी संपर्क साधा
+                        गोसेवा, संशोधन, प्रकल्प किंवा कोणत्याही प्रश्नासाठी संस्थेशी  संपर्क साधा
                     </p>
                 </div>
             </div>
@@ -358,7 +358,7 @@
                         <div class="w-12 h-12 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-3">
                             <span class="text-2xl">ℹ️</span>
                         </div>
-                        <p class="font-medium text-gray-700">आमच्याबद्दल</p>
+                        <p class="font-medium text-gray-700">संस्थेबद्दल</p>
                     </a>
                     <a href="{{ url('/projects') }}"
                         class="bg-gray-50 rounded-xl p-6 text-center hover:bg-orange-50 hover:border-orange-200 border border-gray-200 transition-all duration-200">
@@ -408,9 +408,9 @@
         <section class="py-16 px-4 sm:px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <h2 class="text-2xl font-bold marathi-heading mb-4">आमच्याशी संपर्क साधा</h2>
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">संस्थेशी संपर्क साधा</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
-                        प्रश्न किंवा सहकार्याबद्दल आमच्याशी संपर्क साधा.
+                        प्रश्न किंवा सहकार्याबद्दल संस्थेशी संपर्क साधा.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="{{ url('/gallery') }}"
@@ -454,7 +454,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -539,7 +539,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

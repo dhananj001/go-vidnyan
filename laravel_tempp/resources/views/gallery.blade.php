@@ -526,7 +526,7 @@
                     </div> <!-- Call to Action -->
                     <div
                         class="text-center mt-16 bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-bold marathi-heading mb-4">आमच्या कार्यात सहभागी व्हा</h3>
+                        <h3 class="text-2xl font-bold marathi-heading mb-4">संस्थेच्या कार्यात सहभागी व्हा</h3>
                         <p class="text-green-100 mb-6">गो विज्ञान संशोधन संस्थेच्या कार्याला पाठिंबा द्या आणि गोसेवेत
                             सहभागी व्हा</p>
                         <a href="{{ url('/') }}#contact"
@@ -571,7 +571,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -656,7 +656,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

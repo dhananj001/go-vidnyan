@@ -215,7 +215,7 @@
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="{{ url('/about') }}"
                                     class="inline-flex items-center justify-center bg-white text-green-700 font-semibold py-3 px-8 rounded-lg smooth-transition hover:bg-gray-50 shadow-lg">
-                                    <span>आमच्याबद्दल जाणून घ्या</span>
+                                    <span>संस्थेबद्दल जाणून घ्या</span>
                                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7"></path>
@@ -231,7 +231,7 @@
                         <!-- Right Content - Key Stats -->
                         <div class="lg:pl-8">
                             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-                                <h3 class="text-xl font-semibold mb-6 text-center marathi-heading">आमचा प्रभाव</h3>
+                                <h3 class="text-xl font-semibold mb-6 text-center marathi-heading">संस्थेचा प्रभाव</h3>
                                 <div class="grid grid-cols-2 gap-6 text-center">
                                     <div class="border-b border-white/20 pb-4">
                                         <div class="text-3xl font-bold text-amber-200">1000+</div>
@@ -273,7 +273,7 @@
                     <div>
                         <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
                             <span
-                                class="text-green-700 font-semibold text-sm uppercase tracking-wider">आमच्याबद्दल</span>
+                                class="text-green-700 font-semibold text-sm uppercase tracking-wider">संस्थेबद्दल</span>
                         </div>
                         <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-6">
                             परंपरेशी जोडलेले, विज्ञानाने प्रेरित
@@ -281,7 +281,7 @@
                         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
                             गो-विज्ञान संशोधन संस्थेची स्थापना श्रद्धेय मोरोपंत पिंगळे यांच्या प्रेरणेने पुण्यात २००२
                             साली झाली.
-                            भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी आम्ही समर्पित आहोत.
+                            भारतीय गाय-आधारित जीवनशैली पुनर्स्थापित करण्यासाठी संस्था समर्पित आहोत.
                         </p>
                         <div class="grid grid-cols-3 gap-4 mb-8">
                             <div class="text-center p-4 bg-green-50 rounded-lg">
@@ -312,7 +312,7 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
                     <div class="inline-flex items-center bg-orange-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">आमचे प्रकल्प</span>
+                        <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">संस्थेचे  प्रकल्प</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">
                         विशेष प्रकल्प
@@ -439,7 +439,7 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
                     <div class="inline-flex items-center bg-green-50 rounded-full px-4 py-2 mb-4">
-                        <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">आमची टीम</span>
+                        <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">संस्थेची टीम</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold marathi-heading primary-green mb-4">
                         समर्पित कार्यकर्ते
@@ -498,9 +498,9 @@
         <section class="py-16">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
-                    <h2 class="text-2xl font-bold marathi-heading mb-4">आमच्या मिशनमध्ये सामील व्हा</h2>
+                    <h2 class="text-2xl font-bold marathi-heading mb-4">संस्थेच्या मिशनमध्ये सामील व्हा</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
-                        गोसेवा आणि पंचगव्य आधारित जीवनशैलीच्या प्रसारात आमच्यासोबत हात मिळवा. स्वयंसेवक म्हणून सामील
+                        गोसेवा आणि पंचगव्य आधारित जीवनशैलीच्या प्रसारात संस्थेसोबत हात मिळवा. स्वयंसेवक म्हणून सामील
                         व्हा किंवा संपर्क साधा.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -549,7 +549,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल </a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -634,7 +634,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"

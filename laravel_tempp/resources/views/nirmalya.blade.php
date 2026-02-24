@@ -595,7 +595,7 @@
                 <div class="text-center bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
                     <h2 class="text-2xl font-bold marathi-heading mb-4">निर्माल्य प्रकल्पाबद्दल जाणून घ्या!</h2>
                     <p class="text-green-100 mb-6 max-w-2xl mx-auto">
-                        आमच्या इतर प्रकल्पांबद्दल माहिती घ्या आणि संपर्क साधा.
+                        संस्थेच्या इतर प्रकल्पांबद्दल माहिती घ्या आणि संपर्क साधा.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="{{ url('/projects') }}"
@@ -643,7 +643,7 @@
                                     class="text-green-200 hover:text-white transition-colors text-sm">मुख्यपृष्ठ</a>
                             </li>
                             <li><a href="{{ url('/about') }}"
-                                    class="text-green-200 hover:text-white transition-colors text-sm">आमच्याबद्दल</a>
+                                    class="text-green-200 hover:text-white transition-colors text-sm">संस्थेबद्दल</a>
                             </li>
                             <li><a href="{{ url('/projects') }}"
                                     class="text-green-200 hover:text-white transition-colors text-sm">प्रकल्प</a></li>
@@ -728,7 +728,7 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4 marathi-heading">सामाजिक माध्यमे</h3>
                     <div class="space-y-3">
-                        <p class="text-green-100 text-sm">आमच्याशी जोडले रहा</p>
+                        <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
                             <a href="#"
