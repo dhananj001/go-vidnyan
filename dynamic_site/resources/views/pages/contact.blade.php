@@ -58,7 +58,7 @@
                                     <p class="text-sm text-gray-600 mb-1">प्राथमिक संपर्क:</p>
                                     <p class="font-medium text-gray-900">श्री सतीश पारखी</p>
                                 </div>
-                                <a href="tel:+918888871310"
+                                <a href="tel:+919860150440"
                                     class="inline-flex items-center bg-green-600 text-white px-5 py-3 rounded-xl font-medium hover:bg-green-700 transition-colors duration-200 shadow-md">
                                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path

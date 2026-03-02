@@ -294,7 +294,7 @@
                                         <p class="text-orange-700 font-medium"><strong>एकूण रुग्णसंख्या:</strong> 500
                                         </p>
                                         <p class="text-gray-600"><strong>वैद्य:</strong> सौ. ज्योती मुंदगी, श्री.
-                                            ज्ञानेश्वर साठे</p>
+                                            सतीश पारखी</p>
                                     </div>
                                 </div>
                             </div>

@@ -377,7 +377,7 @@
                                 </svg>
                             </div>
                             <h4 class="font-semibold text-gray-900 mb-2">दूरध्वनी</h4>
-                            <a href="tel:+918888871310" class="text-green-600 hover:text-green-700 font-medium">
+                            <a href="tel:+919860150440" class="text-green-600 hover:text-green-700 font-medium">
                                 +91 88888 71310
                             </a>
                         </div>
@@ -525,9 +525,9 @@
                                 </svg>
                             </div>
                             <div class="text-green-100 text-sm">
-                                <p class="font-medium">श्री. ज्ञानेश्वर साठे</p>
-                                <a href="tel:+918888871310"
-                                    class="text-orange-200 hover:text-white transition-colors">+91 8888871310</a>
+                                <p class="font-medium">श्री. सतीश पारखी</p>
+                                <a href="tel:+919860150440"
+                                    class="text-orange-200 hover:text-white transition-colors">+91 9860150440</a>
                             </div>
                         </div>
 
@@ -730,9 +730,9 @@
                                 </svg>
                             </div>
                             <div class="text-green-100 text-sm">
-                                <p class="font-medium">श्री. ज्ञानेश्वर साठे</p>
-                                <a href="tel:+918888871310"
-                                    class="text-orange-200 hover:text-white transition-colors">+91 8888871310</a>
+                                <p class="font-medium">श्री. सतीश पारखी</p>
+                                <a href="tel:+919860150440"
+                                    class="text-orange-200 hover:text-white transition-colors">+91 9860150440</a>
                             </div>
                         </div>
 
