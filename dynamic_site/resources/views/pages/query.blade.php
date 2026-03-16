@@ -378,7 +378,7 @@
                             </div>
                             <h4 class="font-semibold text-gray-900 mb-2">दूरध्वनी</h4>
                             <a href="tel:+919860150440" class="text-green-600 hover:text-green-700 font-medium">
-                                +91 88888 71310
+                                +91 9860150440
                             </a>
                         </div>
 
