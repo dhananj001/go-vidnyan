@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryCategoryController;
 use App\Http\Controllers\Admin\GalleryImageController;
 use App\Http\Controllers\Admin\GalleryVideoController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+
 use Illuminate\Support\Facades\Route;
 
 // Public pages — using shared layout via pages/ directory
@@ -19,7 +21,7 @@ Route::get('/nirmalya', fn () => view('pages.nirmalya'))->name('nirmalya');
 Route::get('/awards', fn () => view('pages.awards'))->name('awards');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/query', fn () => view('pages.query'))->name('query');
-Route::get('/team', fn () => view('pages.team'))->name('team');
+Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/contact', fn () => view('pages.contact'))->name('contact');
 
 // Auth routes (login only — no public registration)
