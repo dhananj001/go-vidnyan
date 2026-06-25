@@ -557,7 +557,7 @@
                         <p class="text-green-100 text-sm">संस्थेशी जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
-                            <a href="#"
+                            <a href="https://www.facebook.com/profile.php?id=100016330801562&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer"
                                 class="w-10 h-10 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-600/30 hover:bg-blue-600/30 transition-colors">
                                 <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -762,7 +762,7 @@
                         <p class="text-green-100 text-sm">संस्थेशी  जोडले रहा</p>
                         <div class="flex space-x-3">
                             <!-- Facebook -->
-                            <a href="#"
+                            <a href="https://www.facebook.com/profile.php?id=100016330801562&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer"
                                 class="w-10 h-10 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-600/30 hover:bg-blue-600/30 transition-colors">
                                 <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                                     <path
